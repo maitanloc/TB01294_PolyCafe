@@ -1,17 +1,17 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Data;
 using System.Data.SqlClient;
+using System.Data;
 using System.Linq;
-using System.Reflection;
 using System.Text;
 using System.Threading.Tasks;
+using System.Reflection;
 
-namespace DAL_PolyCafe
+namespace DAL_POLYCAFE
 {
     public class DBUtil
     {
-        private static string connString = "Data Source=DELL\\SQLEXPRESS02;Initial Catalog=SOF2052_PolyCafe;Integrated Security=True;";
+        public static string connString = @"Data Source=DELL\SQLEXPRESS02;Initial Catalog=SOF2052_PolyCafe;Integrated Security=True;TrustServerCertificate=True";
         public static SqlCommand GetCommand(string sql, List<object> args, CommandType cmdType)
         {
             SqlConnection conn = new SqlConnection(connString);
@@ -25,16 +25,17 @@ namespace DAL_PolyCafe
 
             return cmd;
         }
+
         public static void Update(string sql, List<object> args, CommandType cmdType = CommandType.Text)
         {
             SqlCommand cmd = GetCommand(sql, args, cmdType);
             cmd.Connection.Open();
+            cmd.Transaction = cmd.Connection.BeginTransaction();
+
             try
             {
-                SqlTransaction transaction = cmd.Connection.BeginTransaction();
-                cmd.Transaction = transaction;
                 cmd.ExecuteNonQuery();
-                transaction.Commit();
+                cmd.Transaction.Commit();
             }
             catch (Exception)
             {
@@ -55,7 +56,8 @@ namespace DAL_PolyCafe
                 throw;
             }
         }
-       
+
+
         public static T Value<T>(string sql, List<object> args, CommandType cmdType = CommandType.Text) where T : new()
         {
             try
@@ -93,4 +95,6 @@ namespace DAL_PolyCafe
             }
         }
     }
+
+
 }

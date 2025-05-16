@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             lblTitle = new Label();
-            lblTaiKhoan = new Label();
+            lblEmail = new Label();
             lblMatKhau = new Label();
             txtMatKhau = new TextBox();
             txtTaiKhoan = new TextBox();
@@ -50,16 +50,16 @@
             lblTitle.TabIndex = 0;
             lblTitle.Click += lblTitle_Click;
             // 
-            // lblTaiKhoan
+            // lblEmail
             // 
-            lblTaiKhoan.AutoSize = true;
-            lblTaiKhoan.BackColor = Color.White;
-            lblTaiKhoan.Font = new Font("Segoe UI", 13F);
-            lblTaiKhoan.Location = new Point(397, 251);
-            lblTaiKhoan.Name = "lblTaiKhoan";
-            lblTaiKhoan.Size = new Size(106, 30);
-            lblTaiKhoan.TabIndex = 1;
-            lblTaiKhoan.Text = "Tài Khoản";
+            lblEmail.AutoSize = true;
+            lblEmail.BackColor = Color.White;
+            lblEmail.Font = new Font("Segoe UI", 13F);
+            lblEmail.Location = new Point(397, 251);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(64, 30);
+            lblEmail.TabIndex = 1;
+            lblEmail.Text = "Email";
             // 
             // lblMatKhau
             // 
@@ -100,6 +100,7 @@
             btnDangNhap.Size = new Size(177, 64);
             btnDangNhap.TabIndex = 5;
             btnDangNhap.UseVisualStyleBackColor = false;
+            btnDangNhap.Click += btnDangNhap_Click;
             // 
             // btnThoat
             // 
@@ -112,6 +113,7 @@
             btnThoat.Size = new Size(189, 64);
             btnThoat.TabIndex = 6;
             btnThoat.UseVisualStyleBackColor = false;
+            btnThoat.Click += btnThoat_Click;
             // 
             // ckbGhiNho
             // 
@@ -137,8 +139,9 @@
             lklblQuenMatKhau.TabIndex = 8;
             lklblQuenMatKhau.TabStop = true;
             lklblQuenMatKhau.Text = "Quên Mật Khẩu";
+            lklblQuenMatKhau.LinkClicked += lklblQuenMatKhau_LinkClicked;
             // 
-            // Login
+            // frmLogin
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
@@ -152,10 +155,10 @@
             Controls.Add(txtTaiKhoan);
             Controls.Add(txtMatKhau);
             Controls.Add(lblMatKhau);
-            Controls.Add(lblTaiKhoan);
+            Controls.Add(lblEmail);
             Controls.Add(lblTitle);
             DoubleBuffered = true;
-            Name = "Login";
+            Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
             ResumeLayout(false);
             PerformLayout();
@@ -164,7 +167,7 @@
         #endregion
 
         private Label lblTitle;
-        private Label lblTaiKhoan;
+        private Label lblEmail;
         private Label lblMatKhau;
         private TextBox txtMatKhau;
         private TextBox txtTaiKhoan;

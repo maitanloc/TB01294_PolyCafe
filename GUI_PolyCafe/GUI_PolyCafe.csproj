@@ -9,8 +9,13 @@
   </PropertyGroup>
 
   <ItemGroup>
+    <PackageReference Include="AF.DataAccessor" Version="2.0.2" />
+  </ItemGroup>
+
+  <ItemGroup>
     <ProjectReference Include="..\BLL_PolyCafe\BLL_PolyCafe.csproj" />
     <ProjectReference Include="..\DTO_PolyCafe\DTO_PolyCafe.csproj" />
+    <ProjectReference Include="..\UTIL_PolyCafe\UTIL_PolyCafe.csproj" />
   </ItemGroup>
 
   <ItemGroup>
