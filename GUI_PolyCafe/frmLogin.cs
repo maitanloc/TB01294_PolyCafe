@@ -59,5 +59,10 @@ namespace GUI_PolyCafe
         {
 
         }
+
+        private void frmLogin_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -145,7 +145,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            BackgroundImage = Properties.Resources.Brown_and_Beige_Illustrated_Coffee_Shop_Presentation__1_;
+            BackgroundImage = Properties.Resources.Brown_and_Beige_Illustrated_Coffee_Shop_Presentation__2_;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1082, 608);
             Controls.Add(lklblQuenMatKhau);
@@ -160,6 +160,7 @@
             DoubleBuffered = true;
             Name = "frmLogin";
             StartPosition = FormStartPosition.CenterScreen;
+            Load += frmLogin_Load;
             ResumeLayout(false);
             PerformLayout();
         }

@@ -118,6 +118,9 @@
     <value>System.Resources.ResXResourceWriter, System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </resheader>
   <assembly alias="System.Windows.Forms" name="System.Windows.Forms, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089" />
+  <data name="z6500488405139_2f26d64658924391b3901739a9cb230b" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\z6500488405139_2f26d64658924391b3901739a9cb230b.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Pica-pic_face_swap-20250411143123" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Pica-pic_face_swap-20250411143123.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
@@ -129,6 +132,9 @@
   </data>
   <data name="z6500392365745_c01e2ca17f864aac4cbad8f7858fc723" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\z6500392365745_c01e2ca17f864aac4cbad8f7858fc723.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
+  <data name="Beige and Brown Minimalist Coffee Shop Video" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Beige and Brown Minimalist Coffee Shop Video.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
   <data name="z6463297758243_9af1c5407995eee64253263132b60927" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\z6463297758243_9af1c5407995eee64253263132b60927.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
@@ -142,13 +148,13 @@
   <data name="z6584608234750_af867aa6a6f7954f5dada3d0cabae447" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\z6584608234750_af867aa6a6f7954f5dada3d0cabae447.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
+  <data name="Brown Beige Cream Modern Illustration Coffee Project Presentation" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Brown Beige Cream Modern Illustration Coffee Project Presentation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  </data>
   <data name="Blue Modern Game Button Twitch Panel (1)" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Blue Modern Game Button Twitch Panel (1).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
-  <data name="z6500488405139_2f26d64658924391b3901739a9cb230b" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\z6500488405139_2f26d64658924391b3901739a9cb230b.jpg;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
-  </data>
-  <data name="Brown Beige Cream Modern Illustration Coffee Project Presentation" type="System.Resources.ResXFileRef, System.Windows.Forms">
-    <value>..\Resources\Brown Beige Cream Modern Illustration Coffee Project Presentation.png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
+  <data name="Brown and Beige Illustrated Coffee Shop Presentation (2)" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\Brown and Beige Illustrated Coffee Shop Presentation (2).png;System.Drawing.Bitmap, System.Drawing, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b03f5f7f11d50a3a</value>
   </data>
 </root>

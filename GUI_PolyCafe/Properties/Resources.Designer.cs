@@ -63,6 +63,16 @@ namespace GUI_PolyCafe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Beige_and_Brown_Minimalist_Coffee_Shop_Video {
+            get {
+                object obj = ResourceManager.GetObject("Beige and Brown Minimalist Coffee Shop Video", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap Blue_Modern_Game_Button_Twitch_Panel {
             get {
                 object obj = ResourceManager.GetObject("Blue Modern Game Button Twitch Panel", resourceCulture);
@@ -96,6 +106,16 @@ namespace GUI_PolyCafe.Properties {
         internal static System.Drawing.Bitmap Brown_and_Beige_Illustrated_Coffee_Shop_Presentation__1_ {
             get {
                 object obj = ResourceManager.GetObject("Brown and Beige Illustrated Coffee Shop Presentation (1)", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Brown_and_Beige_Illustrated_Coffee_Shop_Presentation__2_ {
+            get {
+                object obj = ResourceManager.GetObject("Brown and Beige Illustrated Coffee Shop Presentation (2)", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }
