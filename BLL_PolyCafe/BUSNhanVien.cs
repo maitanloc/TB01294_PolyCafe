@@ -6,6 +6,7 @@ using System.Threading.Tasks;
 
 using DTO_PolyCafe;
 using DAL_POLYCAFE;
+using System.Runtime.InteropServices.WindowsRuntime;
 
 namespace BLL_PolyCafe
 {
@@ -39,13 +40,46 @@ namespace BLL_PolyCafe
                 throw;
             }
         }
+        public List<NhanVien> GetNhanVien()
+        {
+
+            return dalNhanVien.selectAll();
+        }
+
+        public List<NhanVien> GetNhanVienlist()
+        {
+            return dalNhanVien.selectAll();
+
+        }
+        public string InsertNhanVien(NhanVien nv)
+        {
+            try
+            {
+                nv.MaNhanVien = dalNhanVien.generateMaNhanVien();
+                if (string.IsNullOrEmpty(nv.MaNhanVien))
+                {
+                    return " Mã Nhân Viên Không hợp lệ";
+                }
+                if (dalNhanVien.checkEmailExits(nv.Email))
+                {
+                    return "Email đã tồn tại trong hệ thống";
+                }
+
+                dalNhanVien.insert(nv);
+                return "Thêm Nhân Viên thành công";
+            }
+            catch (Exception ex)
+            {
+                return $"Error: {ex.Message}";
+            }
+        }
+
+
+
+
+
+
     }
-
-
-
-
-
-
 }
 
 

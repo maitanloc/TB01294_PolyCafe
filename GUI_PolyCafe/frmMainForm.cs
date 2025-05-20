@@ -51,8 +51,7 @@ namespace GUI_PolyCafe
         // Sự kiện menu "Nhân viên" - Mở ra 1 cửa sổ mới
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            frmNhanVien frmNhanVien = new frmNhanVien();
-            frmNhanVien.Show();
+            openChildForm(new frmNhanVien());
             // Nếu muốn modal (phải đóng mới thao tác tiếp được): dùng ShowDialog() thay vì Show()
         }
 

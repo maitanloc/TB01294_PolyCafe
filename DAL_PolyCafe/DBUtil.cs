@@ -94,6 +94,19 @@ namespace DAL_POLYCAFE
                 throw;
             }
         }
+        public static object ScalarQuery(string sql, List<object> args, CommandType cmdType = CommandType.Text)
+        {
+            try
+            {
+                SqlCommand cmd = GetCommand(sql, args, cmdType);
+                cmd.Connection.Open();
+                return cmd.ExecuteScalar();
+            }
+            catch (Exception)
+            {
+                throw;
+            }
+        }
     }
 
 

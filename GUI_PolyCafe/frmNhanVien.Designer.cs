@@ -29,20 +29,21 @@
         private void InitializeComponent()
         {
             lblNhanVien = new Label();
-            dataGridView1 = new DataGridView();
+            dgvNhanVien = new DataGridView();
             txtTimKemNhanVien = new TextBox();
             btnTimKiemNhanVien = new Button();
-            groupBox1 = new GroupBox();
-            cboTinhTrang = new ComboBox();
-            cboVaiTro = new ComboBox();
-            txtDiaChi = new TextBox();
+            grpNhanVien = new GroupBox();
+            panel1 = new Panel();
+            rdoNhanVien = new RadioButton();
+            rdoQuanLy = new RadioButton();
+            rdoTamNgung = new RadioButton();
+            rdoDangHoatDong = new RadioButton();
             txtMatKhau = new TextBox();
             txtEmail = new TextBox();
             txtHoTen = new TextBox();
             txtMaNV = new TextBox();
             lblTinhTrang = new Label();
             lblVaiTro = new Label();
-            lblDiaChi = new Label();
             lblMatKhau = new Label();
             lblEmail = new Label();
             lblHoTen = new Label();
@@ -54,8 +55,9 @@
             btnXoaNhanVien = new Button();
             btnLamMoiNhanVien = new Button();
             btnThoatNhanVien = new Button();
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
-            groupBox1.SuspendLayout();
+            ((System.ComponentModel.ISupportInitialize)dgvNhanVien).BeginInit();
+            grpNhanVien.SuspendLayout();
+            panel1.SuspendLayout();
             SuspendLayout();
             // 
             // lblNhanVien
@@ -68,14 +70,15 @@
             lblNhanVien.TabIndex = 0;
             lblNhanVien.Text = "Nhân Viên";
             // 
-            // dataGridView1
+            // dgvNhanVien
             // 
-            dataGridView1.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
-            dataGridView1.Location = new Point(15, 58);
-            dataGridView1.Name = "dataGridView1";
-            dataGridView1.RowHeadersWidth = 51;
-            dataGridView1.Size = new Size(1108, 253);
-            dataGridView1.TabIndex = 1;
+            dgvNhanVien.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
+            dgvNhanVien.Location = new Point(15, 58);
+            dgvNhanVien.Name = "dgvNhanVien";
+            dgvNhanVien.RowHeadersWidth = 51;
+            dgvNhanVien.Size = new Size(1108, 253);
+            dgvNhanVien.TabIndex = 1;
+            dgvNhanVien.CellClick += dgvNhanVien_CellClick;
             // 
             // txtTimKemNhanVien
             // 
@@ -83,6 +86,7 @@
             txtTimKemNhanVien.Name = "txtTimKemNhanVien";
             txtTimKemNhanVien.Size = new Size(256, 27);
             txtTimKemNhanVien.TabIndex = 2;
+            txtTimKemNhanVien.TextChanged += txtTimKemNhanVien_TextChanged;
             // 
             // btnTimKiemNhanVien
             // 
@@ -92,52 +96,82 @@
             btnTimKiemNhanVien.TabIndex = 3;
             btnTimKiemNhanVien.Text = "Tìm Kiếm";
             btnTimKiemNhanVien.UseVisualStyleBackColor = true;
+            btnTimKiemNhanVien.Click += btnTimKiemNhanVien_Click;
             // 
-            // groupBox1
+            // grpNhanVien
             // 
-            groupBox1.Controls.Add(cboTinhTrang);
-            groupBox1.Controls.Add(cboVaiTro);
-            groupBox1.Controls.Add(txtDiaChi);
-            groupBox1.Controls.Add(txtMatKhau);
-            groupBox1.Controls.Add(txtEmail);
-            groupBox1.Controls.Add(txtHoTen);
-            groupBox1.Controls.Add(txtMaNV);
-            groupBox1.Controls.Add(lblTinhTrang);
-            groupBox1.Controls.Add(lblVaiTro);
-            groupBox1.Controls.Add(lblDiaChi);
-            groupBox1.Controls.Add(lblMatKhau);
-            groupBox1.Controls.Add(lblEmail);
-            groupBox1.Controls.Add(lblHoTen);
-            groupBox1.Controls.Add(lblMaNV);
-            groupBox1.Location = new Point(21, 369);
-            groupBox1.Name = "groupBox1";
-            groupBox1.Size = new Size(1102, 202);
-            groupBox1.TabIndex = 4;
-            groupBox1.TabStop = false;
-            groupBox1.Text = "groupBox1";
+            grpNhanVien.Controls.Add(panel1);
+            grpNhanVien.Controls.Add(rdoTamNgung);
+            grpNhanVien.Controls.Add(rdoDangHoatDong);
+            grpNhanVien.Controls.Add(txtMatKhau);
+            grpNhanVien.Controls.Add(txtEmail);
+            grpNhanVien.Controls.Add(txtHoTen);
+            grpNhanVien.Controls.Add(txtMaNV);
+            grpNhanVien.Controls.Add(lblTinhTrang);
+            grpNhanVien.Controls.Add(lblVaiTro);
+            grpNhanVien.Controls.Add(lblMatKhau);
+            grpNhanVien.Controls.Add(lblEmail);
+            grpNhanVien.Controls.Add(lblHoTen);
+            grpNhanVien.Controls.Add(lblMaNV);
+            grpNhanVien.Location = new Point(21, 369);
+            grpNhanVien.Name = "grpNhanVien";
+            grpNhanVien.Size = new Size(1102, 202);
+            grpNhanVien.TabIndex = 4;
+            grpNhanVien.TabStop = false;
+            grpNhanVien.Text = "Nhân Viên";
             // 
-            // cboTinhTrang
+            // panel1
             // 
-            cboTinhTrang.FormattingEnabled = true;
-            cboTinhTrang.Location = new Point(667, 135);
-            cboTinhTrang.Name = "cboTinhTrang";
-            cboTinhTrang.Size = new Size(411, 28);
-            cboTinhTrang.TabIndex = 13;
+            panel1.Controls.Add(rdoNhanVien);
+            panel1.Controls.Add(rdoQuanLy);
+            panel1.Location = new Point(667, 70);
+            panel1.Name = "panel1";
+            panel1.Size = new Size(413, 45);
+            panel1.TabIndex = 20;
             // 
-            // cboVaiTro
+            // rdoNhanVien
             // 
-            cboVaiTro.FormattingEnabled = true;
-            cboVaiTro.Location = new Point(667, 88);
-            cboVaiTro.Name = "cboVaiTro";
-            cboVaiTro.Size = new Size(411, 28);
-            cboVaiTro.TabIndex = 12;
+            rdoNhanVien.AutoSize = true;
+            rdoNhanVien.Location = new Point(15, 17);
+            rdoNhanVien.Name = "rdoNhanVien";
+            rdoNhanVien.Size = new Size(98, 24);
+            rdoNhanVien.TabIndex = 16;
+            rdoNhanVien.TabStop = true;
+            rdoNhanVien.Text = "Nhân Viên";
+            rdoNhanVien.UseVisualStyleBackColor = true;
             // 
-            // txtDiaChi
+            // rdoQuanLy
             // 
-            txtDiaChi.Location = new Point(667, 31);
-            txtDiaChi.Name = "txtDiaChi";
-            txtDiaChi.Size = new Size(413, 27);
-            txtDiaChi.TabIndex = 11;
+            rdoQuanLy.AutoSize = true;
+            rdoQuanLy.Location = new Point(296, 17);
+            rdoQuanLy.Name = "rdoQuanLy";
+            rdoQuanLy.Size = new Size(82, 24);
+            rdoQuanLy.TabIndex = 17;
+            rdoQuanLy.TabStop = true;
+            rdoQuanLy.Text = "Quản Lý";
+            rdoQuanLy.UseVisualStyleBackColor = true;
+            // 
+            // rdoTamNgung
+            // 
+            rdoTamNgung.AutoSize = true;
+            rdoTamNgung.Location = new Point(963, 141);
+            rdoTamNgung.Name = "rdoTamNgung";
+            rdoTamNgung.Size = new Size(109, 24);
+            rdoTamNgung.TabIndex = 19;
+            rdoTamNgung.TabStop = true;
+            rdoTamNgung.Text = "Tạm Ngưng";
+            rdoTamNgung.UseVisualStyleBackColor = true;
+            // 
+            // rdoDangHoatDong
+            // 
+            rdoDangHoatDong.AutoSize = true;
+            rdoDangHoatDong.Location = new Point(682, 143);
+            rdoDangHoatDong.Name = "rdoDangHoatDong";
+            rdoDangHoatDong.Size = new Size(144, 24);
+            rdoDangHoatDong.TabIndex = 18;
+            rdoDangHoatDong.TabStop = true;
+            rdoDangHoatDong.Text = "Đang Hoạt Động";
+            rdoDangHoatDong.UseVisualStyleBackColor = true;
             // 
             // txtMatKhau
             // 
@@ -164,8 +198,10 @@
             // 
             txtMaNV.Location = new Point(98, 28);
             txtMaNV.Name = "txtMaNV";
+            txtMaNV.ReadOnly = true;
             txtMaNV.Size = new Size(413, 27);
             txtMaNV.TabIndex = 7;
+            txtMaNV.TextChanged += txtMaNV_TextChanged;
             // 
             // lblTinhTrang
             // 
@@ -184,15 +220,6 @@
             lblVaiTro.Size = new Size(54, 20);
             lblVaiTro.TabIndex = 5;
             lblVaiTro.Text = "Vai Trò";
-            // 
-            // lblDiaChi
-            // 
-            lblDiaChi.AutoSize = true;
-            lblDiaChi.Location = new Point(583, 31);
-            lblDiaChi.Name = "lblDiaChi";
-            lblDiaChi.Size = new Size(57, 20);
-            lblDiaChi.TabIndex = 4;
-            lblDiaChi.Text = "Địa Chỉ";
             // 
             // lblMatKhau
             // 
@@ -248,6 +275,7 @@
             btnThemNhanVien.TabIndex = 6;
             btnThemNhanVien.Text = "Thêm";
             btnThemNhanVien.UseVisualStyleBackColor = true;
+            btnThemNhanVien.Click += btnThemNhanVien_Click;
             // 
             // btnSuaNhanVien
             // 
@@ -257,6 +285,7 @@
             btnSuaNhanVien.TabIndex = 7;
             btnSuaNhanVien.Text = "Sửa";
             btnSuaNhanVien.UseVisualStyleBackColor = true;
+            btnSuaNhanVien.Click += btnSuaNhanVien_Click;
             // 
             // btnDanhSachNhanVien
             // 
@@ -284,6 +313,7 @@
             btnLamMoiNhanVien.TabIndex = 10;
             btnLamMoiNhanVien.Text = "Làm Mới";
             btnLamMoiNhanVien.UseVisualStyleBackColor = true;
+            btnLamMoiNhanVien.Click += btnLamMoiNhanVien_Click;
             // 
             // btnThoatNhanVien
             // 
@@ -299,7 +329,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1145, 691);
+            ClientSize = new Size(1145, 654);
             Controls.Add(btnThoatNhanVien);
             Controls.Add(btnLamMoiNhanVien);
             Controls.Add(btnXoaNhanVien);
@@ -307,17 +337,20 @@
             Controls.Add(btnSuaNhanVien);
             Controls.Add(btnThemNhanVien);
             Controls.Add(lblThongTinNhanVien);
-            Controls.Add(groupBox1);
+            Controls.Add(grpNhanVien);
             Controls.Add(btnTimKiemNhanVien);
             Controls.Add(txtTimKemNhanVien);
-            Controls.Add(dataGridView1);
+            Controls.Add(dgvNhanVien);
             Controls.Add(lblNhanVien);
             DoubleBuffered = true;
             Name = "frmNhanVien";
             Text = "frmNhanVien";
-            ((System.ComponentModel.ISupportInitialize)dataGridView1).EndInit();
-            groupBox1.ResumeLayout(false);
-            groupBox1.PerformLayout();
+            Load += frmNhanVien_Load;
+            ((System.ComponentModel.ISupportInitialize)dgvNhanVien).EndInit();
+            grpNhanVien.ResumeLayout(false);
+            grpNhanVien.PerformLayout();
+            panel1.ResumeLayout(false);
+            panel1.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -325,21 +358,17 @@
         #endregion
 
         private Label lblNhanVien;
-        private DataGridView dataGridView1;
+        private DataGridView dgvNhanVien;
         private TextBox txtTimKemNhanVien;
         private Button btnTimKiemNhanVien;
-        private GroupBox groupBox1;
+        private GroupBox grpNhanVien;
         private Label lblThongTinNhanVien;
-        private ComboBox cboTinhTrang;
-        private ComboBox cboVaiTro;
-        private TextBox txtDiaChi;
         private TextBox txtMatKhau;
         private TextBox txtEmail;
         private TextBox txtHoTen;
         private TextBox txtMaNV;
         private Label lblTinhTrang;
         private Label lblVaiTro;
-        private Label lblDiaChi;
         private Label lblMatKhau;
         private Label lblEmail;
         private Label lblHoTen;
@@ -350,5 +379,10 @@
         private Button btnXoaNhanVien;
         private Button btnLamMoiNhanVien;
         private Button btnThoatNhanVien;
+        private Panel panel1;
+        private RadioButton rdoNhanVien;
+        private RadioButton rdoQuanLy;
+        private RadioButton rdoTamNgung;
+        private RadioButton rdoDangHoatDong;
     }
 }

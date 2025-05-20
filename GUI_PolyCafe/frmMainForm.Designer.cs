@@ -143,9 +143,10 @@
             // 
             // pnMain
             // 
-            pnMain.Location = new Point(0, 535);
+            pnMain.BackColor = Color.Transparent;
+            pnMain.Location = new Point(0, 29);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(1134, 54);
+            pnMain.Size = new Size(1134, 634);
             pnMain.TabIndex = 10;
             pnMain.Paint += pnMain_Paint;
             // 
@@ -155,7 +156,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Beige_and_Brown_Minimalist_Coffee_Shop_Video;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1127, 588);
+            ClientSize = new Size(1127, 665);
             Controls.Add(pnMain);
             Controls.Add(menuStrip1);
             DoubleBuffered = true;
