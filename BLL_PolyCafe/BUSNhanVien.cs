@@ -10,7 +10,7 @@ using DAL_POLYCAFE;
 namespace BLL_PolyCafe
 {
 
-    
+
     public class BUSNhanVien
     {
         DAL_NHANVIEN dalNhanVien = new DAL_NHANVIEN();
@@ -23,6 +23,30 @@ namespace BLL_PolyCafe
             }
             return dalNhanVien.GetNHANVIEN(email, password);
         }
+        public bool updateMatKhau(string email, string mk)
+        {
+            try
+            {
+                if (string.IsNullOrEmpty(email) || string.IsNullOrEmpty(mk))
+                {
+                    return false;
+                }
+                dalNhanVien.UpdateMatKhau(email, mk);
+                return true;
+            }
+            catch (Exception ex)
+            {
+                throw;
+            }
+        }
     }
-    
+
+
+
+
+
+
 }
+
+
+

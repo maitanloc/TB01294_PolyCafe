@@ -35,7 +35,7 @@
             txtTaiKhoan = new TextBox();
             btnDangNhap = new Button();
             btnThoat = new Button();
-            ckbGhiNho = new CheckBox();
+            ckbHienThi = new CheckBox();
             lklblQuenMatKhau = new LinkLabel();
             SuspendLayout();
             // 
@@ -79,6 +79,7 @@
             txtMatKhau.Name = "txtMatKhau";
             txtMatKhau.Size = new Size(546, 36);
             txtMatKhau.TabIndex = 3;
+            txtMatKhau.TextChanged += txtMatKhau_TextChanged;
             // 
             // txtTaiKhoan
             // 
@@ -95,7 +96,7 @@
             btnDangNhap.BackgroundImageLayout = ImageLayout.Stretch;
             btnDangNhap.Font = new Font("Segoe UI", 15F);
             btnDangNhap.ForeColor = SystemColors.ActiveCaptionText;
-            btnDangNhap.Location = new Point(478, 426);
+            btnDangNhap.Location = new Point(397, 426);
             btnDangNhap.Name = "btnDangNhap";
             btnDangNhap.Size = new Size(177, 64);
             btnDangNhap.TabIndex = 5;
@@ -115,17 +116,18 @@
             btnThoat.UseVisualStyleBackColor = false;
             btnThoat.Click += btnThoat_Click;
             // 
-            // ckbGhiNho
+            // ckbHienThi
             // 
-            ckbGhiNho.AutoSize = true;
-            ckbGhiNho.BackColor = Color.Transparent;
-            ckbGhiNho.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
-            ckbGhiNho.Location = new Point(524, 366);
-            ckbGhiNho.Name = "ckbGhiNho";
-            ckbGhiNho.Size = new Size(256, 39);
-            ckbGhiNho.TabIndex = 7;
-            ckbGhiNho.Text = "Ghi Nhớ Tài Khoản";
-            ckbGhiNho.UseVisualStyleBackColor = false;
+            ckbHienThi.AutoSize = true;
+            ckbHienThi.BackColor = Color.Transparent;
+            ckbHienThi.Font = new Font("Segoe UI", 15F, FontStyle.Bold);
+            ckbHienThi.Location = new Point(409, 366);
+            ckbHienThi.Name = "ckbHienThi";
+            ckbHienThi.Size = new Size(256, 39);
+            ckbHienThi.TabIndex = 7;
+            ckbHienThi.Text = "Hiển Thị Mật Khẩu";
+            ckbHienThi.UseVisualStyleBackColor = false;
+            ckbHienThi.CheckedChanged += ckbHienThi_CheckedChanged;
             // 
             // lklblQuenMatKhau
             // 
@@ -133,7 +135,7 @@
             lklblQuenMatKhau.BackColor = Color.Transparent;
             lklblQuenMatKhau.Font = new Font("Segoe UI", 15F, FontStyle.Bold | FontStyle.Italic);
             lklblQuenMatKhau.LinkColor = Color.Cyan;
-            lklblQuenMatKhau.Location = new Point(872, 366);
+            lklblQuenMatKhau.Location = new Point(671, 366);
             lklblQuenMatKhau.Name = "lklblQuenMatKhau";
             lklblQuenMatKhau.Size = new Size(198, 35);
             lklblQuenMatKhau.TabIndex = 8;
@@ -149,7 +151,7 @@
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1082, 608);
             Controls.Add(lklblQuenMatKhau);
-            Controls.Add(ckbGhiNho);
+            Controls.Add(ckbHienThi);
             Controls.Add(btnThoat);
             Controls.Add(btnDangNhap);
             Controls.Add(txtTaiKhoan);
@@ -174,7 +176,7 @@
         private TextBox txtTaiKhoan;
         private Button btnDangNhap;
         private Button btnThoat;
-        private CheckBox ckbGhiNho;
+        private CheckBox ckbHienThi;
         private LinkLabel lklblQuenMatKhau;
     }
 }

@@ -64,5 +64,18 @@ namespace GUI_PolyCafe
         {
 
         }
+
+        private void txtMatKhau_TextChanged(object sender, EventArgs e)
+        {
+            // ẩn mật khẩu
+            txtMatKhau.PasswordChar = '*';
+
+        }
+
+        private void ckbHienThi_CheckedChanged(object sender, EventArgs e)
+        {
+
+            txtMatKhau.PasswordChar = ckbHienThi.Checked ? '\0' : '*';
+        }
     }
 }

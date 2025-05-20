@@ -143,6 +143,16 @@ namespace GUI_PolyCafe.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap Strong_Password_Educational_Video {
+            get {
+                object obj = ResourceManager.GetObject("Strong Password Educational Video", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap z6463297758243_9af1c5407995eee64253263132b60927 {
             get {
                 object obj = ResourceManager.GetObject("z6463297758243_9af1c5407995eee64253263132b60927", resourceCulture);

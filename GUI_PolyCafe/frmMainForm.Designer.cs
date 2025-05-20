@@ -29,119 +29,125 @@
         private void InitializeComponent()
         {
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
-            btnQuanLyNhanVien = new Button();
-            btnQuanLyThe = new Button();
-            btnQuanLyPhieuBanHang = new Button();
-            btnQuanLyLoaiSanPham = new Button();
-            btnQuanLySanPham = new Button();
-            btnQuanLyVatDung = new Button();
-            btnKhuyenMai = new Button();
-            btnQuanLyThongKe = new Button();
-            btnQuanLyTaiKhoan = new Button();
-            btnThoat = new Button();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
+            menuStrip1 = new MenuStrip();
+            hệThốngToolStripMenuItem = new ToolStripMenuItem();
+            đổiMậtKhẩuToolStripMenuItem = new ToolStripMenuItem();
+            đăngXuấtToolStripMenuItem = new ToolStripMenuItem();
+            thôngTinTàiKhoànToolStripMenuItem = new ToolStripMenuItem();
+            thoátToolStripMenuItem = new ToolStripMenuItem();
+            danhMụcToolStripMenuItem = new ToolStripMenuItem();
+            quảnLýSảnPhẩmToolStripMenuItem = new ToolStripMenuItem();
+            quảnLýLoạiSảnPhẩmToolStripMenuItem = new ToolStripMenuItem();
+            bánHàngToolStripMenuItem = new ToolStripMenuItem();
+            nhânViênToolStripMenuItem = new ToolStripMenuItem();
+            doanhThuToolStripMenuItem = new ToolStripMenuItem();
+            thốngKêToolStripMenuItem = new ToolStripMenuItem();
+            hướngDẫnToolStripMenuItem = new ToolStripMenuItem();
+            pnMain = new Panel();
+            menuStrip1.SuspendLayout();
             SuspendLayout();
             // 
-            // btnQuanLyNhanVien
+            // menuStrip1
             // 
-            btnQuanLyNhanVien.FlatStyle = FlatStyle.Flat;
-            btnQuanLyNhanVien.Font = new Font("Script MT Bold", 13F);
-            btnQuanLyNhanVien.Location = new Point(284, 204);
-            btnQuanLyNhanVien.Name = "btnQuanLyNhanVien";
-            btnQuanLyNhanVien.Size = new Size(149, 79);
-            btnQuanLyNhanVien.TabIndex = 0;
-            btnQuanLyNhanVien.Text = "Quản Lý NV";
-            btnQuanLyNhanVien.UseVisualStyleBackColor = true;
+            menuStrip1.ImageScalingSize = new Size(20, 20);
+            menuStrip1.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem, danhMụcToolStripMenuItem, bánHàngToolStripMenuItem, nhânViênToolStripMenuItem, doanhThuToolStripMenuItem, hướngDẫnToolStripMenuItem });
+            menuStrip1.Location = new Point(0, 0);
+            menuStrip1.Name = "menuStrip1";
+            menuStrip1.Size = new Size(1125, 28);
+            menuStrip1.TabIndex = 9;
+            menuStrip1.Text = "menuStrip1";
             // 
-            // btnQuanLyThe
+            // hệThốngToolStripMenuItem
             // 
-            btnQuanLyThe.Font = new Font("Script MT Bold", 12.5F, FontStyle.Bold);
-            btnQuanLyThe.Location = new Point(439, 204);
-            btnQuanLyThe.Name = "btnQuanLyThe";
-            btnQuanLyThe.Size = new Size(153, 79);
-            btnQuanLyThe.TabIndex = 1;
-            btnQuanLyThe.Text = "Quản Lý Thẻ Lưu Động";
-            btnQuanLyThe.UseVisualStyleBackColor = true;
+            hệThốngToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { đổiMậtKhẩuToolStripMenuItem, đăngXuấtToolStripMenuItem, thôngTinTàiKhoànToolStripMenuItem, thoátToolStripMenuItem });
+            hệThốngToolStripMenuItem.Name = "hệThốngToolStripMenuItem";
+            hệThốngToolStripMenuItem.Size = new Size(88, 24);
+            hệThốngToolStripMenuItem.Text = "Hệ Thống";
             // 
-            // btnQuanLyPhieuBanHang
+            // đổiMậtKhẩuToolStripMenuItem
             // 
-            btnQuanLyPhieuBanHang.Font = new Font("Script MT Bold", 12F, FontStyle.Bold);
-            btnQuanLyPhieuBanHang.Location = new Point(598, 204);
-            btnQuanLyPhieuBanHang.Name = "btnQuanLyPhieuBanHang";
-            btnQuanLyPhieuBanHang.Size = new Size(157, 79);
-            btnQuanLyPhieuBanHang.TabIndex = 2;
-            btnQuanLyPhieuBanHang.Text = "Quản Lý Phiếu Bán Hàng";
-            btnQuanLyPhieuBanHang.UseVisualStyleBackColor = true;
+            đổiMậtKhẩuToolStripMenuItem.Name = "đổiMậtKhẩuToolStripMenuItem";
+            đổiMậtKhẩuToolStripMenuItem.Size = new Size(226, 26);
+            đổiMậtKhẩuToolStripMenuItem.Text = "Đổi Mật Khẩu";
+            đổiMậtKhẩuToolStripMenuItem.Click += đổiMậtKhẩuToolStripMenuItem_Click;
             // 
-            // btnQuanLyLoaiSanPham
+            // đăngXuấtToolStripMenuItem
             // 
-            btnQuanLyLoaiSanPham.Font = new Font("Script MT Bold", 13F, FontStyle.Bold);
-            btnQuanLyLoaiSanPham.Location = new Point(919, 204);
-            btnQuanLyLoaiSanPham.Name = "btnQuanLyLoaiSanPham";
-            btnQuanLyLoaiSanPham.Size = new Size(162, 79);
-            btnQuanLyLoaiSanPham.TabIndex = 3;
-            btnQuanLyLoaiSanPham.Text = "Quản Lý Loại Sản Phẩm";
-            btnQuanLyLoaiSanPham.UseVisualStyleBackColor = true;
+            đăngXuấtToolStripMenuItem.Name = "đăngXuấtToolStripMenuItem";
+            đăngXuấtToolStripMenuItem.Size = new Size(226, 26);
+            đăngXuấtToolStripMenuItem.Text = "Đăng Xuất";
             // 
-            // btnQuanLySanPham
+            // thôngTinTàiKhoànToolStripMenuItem
             // 
-            btnQuanLySanPham.Font = new Font("Script MT Bold", 13F, FontStyle.Bold);
-            btnQuanLySanPham.Location = new Point(761, 204);
-            btnQuanLySanPham.Name = "btnQuanLySanPham";
-            btnQuanLySanPham.Size = new Size(152, 79);
-            btnQuanLySanPham.TabIndex = 3;
-            btnQuanLySanPham.Text = "Quản Lý Sản Phẩm";
-            btnQuanLySanPham.UseVisualStyleBackColor = true;
+            thôngTinTàiKhoànToolStripMenuItem.Name = "thôngTinTàiKhoànToolStripMenuItem";
+            thôngTinTàiKhoànToolStripMenuItem.Size = new Size(226, 26);
+            thôngTinTàiKhoànToolStripMenuItem.Text = "Thông Tin Tài Khoàn";
             // 
-            // btnQuanLyVatDung
+            // thoátToolStripMenuItem
             // 
-            btnQuanLyVatDung.Font = new Font("Script MT Bold", 13F, FontStyle.Bold);
-            btnQuanLyVatDung.Location = new Point(284, 379);
-            btnQuanLyVatDung.Name = "btnQuanLyVatDung";
-            btnQuanLyVatDung.Size = new Size(149, 79);
-            btnQuanLyVatDung.TabIndex = 4;
-            btnQuanLyVatDung.Text = "Quản Lý Vật Dụng";
-            btnQuanLyVatDung.UseVisualStyleBackColor = true;
+            thoátToolStripMenuItem.Name = "thoátToolStripMenuItem";
+            thoátToolStripMenuItem.Size = new Size(226, 26);
+            thoátToolStripMenuItem.Text = "Thoát";
             // 
-            // btnKhuyenMai
+            // danhMụcToolStripMenuItem
             // 
-            btnKhuyenMai.Font = new Font("Script MT Bold", 13F, FontStyle.Bold);
-            btnKhuyenMai.Location = new Point(439, 379);
-            btnKhuyenMai.Name = "btnKhuyenMai";
-            btnKhuyenMai.Size = new Size(153, 79);
-            btnKhuyenMai.TabIndex = 5;
-            btnKhuyenMai.Text = "Quản Lý Khuyến Mãi";
-            btnKhuyenMai.UseVisualStyleBackColor = true;
+            danhMụcToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { quảnLýSảnPhẩmToolStripMenuItem, quảnLýLoạiSảnPhẩmToolStripMenuItem });
+            danhMụcToolStripMenuItem.Name = "danhMụcToolStripMenuItem";
+            danhMụcToolStripMenuItem.Size = new Size(90, 24);
+            danhMụcToolStripMenuItem.Text = "Danh Mục";
             // 
-            // btnQuanLyThongKe
+            // quảnLýSảnPhẩmToolStripMenuItem
             // 
-            btnQuanLyThongKe.Font = new Font("Script MT Bold", 14F, FontStyle.Bold);
-            btnQuanLyThongKe.Location = new Point(598, 379);
-            btnQuanLyThongKe.Name = "btnQuanLyThongKe";
-            btnQuanLyThongKe.Size = new Size(157, 79);
-            btnQuanLyThongKe.TabIndex = 6;
-            btnQuanLyThongKe.Text = " Quản Lý    Thống Kê";
-            btnQuanLyThongKe.UseVisualStyleBackColor = true;
+            quảnLýSảnPhẩmToolStripMenuItem.Name = "quảnLýSảnPhẩmToolStripMenuItem";
+            quảnLýSảnPhẩmToolStripMenuItem.Size = new Size(245, 26);
+            quảnLýSảnPhẩmToolStripMenuItem.Text = "Quản Lý Sản Phẩm";
             // 
-            // btnQuanLyTaiKhoan
+            // quảnLýLoạiSảnPhẩmToolStripMenuItem
             // 
-            btnQuanLyTaiKhoan.Font = new Font("Script MT Bold", 13F, FontStyle.Bold);
-            btnQuanLyTaiKhoan.Location = new Point(761, 379);
-            btnQuanLyTaiKhoan.Name = "btnQuanLyTaiKhoan";
-            btnQuanLyTaiKhoan.Size = new Size(152, 79);
-            btnQuanLyTaiKhoan.TabIndex = 7;
-            btnQuanLyTaiKhoan.Text = "Quản Lý Tài Khoản";
-            btnQuanLyTaiKhoan.UseVisualStyleBackColor = true;
+            quảnLýLoạiSảnPhẩmToolStripMenuItem.Name = "quảnLýLoạiSảnPhẩmToolStripMenuItem";
+            quảnLýLoạiSảnPhẩmToolStripMenuItem.Size = new Size(245, 26);
+            quảnLýLoạiSảnPhẩmToolStripMenuItem.Text = "Quản Lý Loại Sản Phẩm";
             // 
-            // btnThoat
+            // bánHàngToolStripMenuItem
             // 
-            btnThoat.Font = new Font("Script MT Bold", 14F, FontStyle.Bold);
-            btnThoat.Location = new Point(919, 379);
-            btnThoat.Name = "btnThoat";
-            btnThoat.Size = new Size(162, 79);
-            btnThoat.TabIndex = 8;
-            btnThoat.Text = "Thoát";
-            btnThoat.UseVisualStyleBackColor = true;
+            bánHàngToolStripMenuItem.Name = "bánHàngToolStripMenuItem";
+            bánHàngToolStripMenuItem.Size = new Size(88, 24);
+            bánHàngToolStripMenuItem.Text = "Bán Hàng";
+            // 
+            // nhânViênToolStripMenuItem
+            // 
+            nhânViênToolStripMenuItem.Name = "nhânViênToolStripMenuItem";
+            nhânViênToolStripMenuItem.Size = new Size(91, 24);
+            nhânViênToolStripMenuItem.Text = "Nhân Viên";
+            nhânViênToolStripMenuItem.Click += nhânViênToolStripMenuItem_Click;
+            // 
+            // doanhThuToolStripMenuItem
+            // 
+            doanhThuToolStripMenuItem.DropDownItems.AddRange(new ToolStripItem[] { thốngKêToolStripMenuItem });
+            doanhThuToolStripMenuItem.Name = "doanhThuToolStripMenuItem";
+            doanhThuToolStripMenuItem.Size = new Size(95, 24);
+            doanhThuToolStripMenuItem.Text = "Doanh Thu";
+            // 
+            // thốngKêToolStripMenuItem
+            // 
+            thốngKêToolStripMenuItem.Name = "thốngKêToolStripMenuItem";
+            thốngKêToolStripMenuItem.Size = new Size(153, 26);
+            thốngKêToolStripMenuItem.Text = "Thống kê";
+            // 
+            // hướngDẫnToolStripMenuItem
+            // 
+            hướngDẫnToolStripMenuItem.Name = "hướngDẫnToolStripMenuItem";
+            hướngDẫnToolStripMenuItem.Size = new Size(100, 24);
+            hướngDẫnToolStripMenuItem.Text = "Hướng Dẫn";
+            // 
+            // pnMain
+            // 
+            pnMain.Location = new Point(0, 618);
+            pnMain.Name = "pnMain";
+            pnMain.Size = new Size(1134, 35);
+            pnMain.TabIndex = 10;
+            pnMain.Paint += pnMain_Paint;
             // 
             // frmMainForm
             // 
@@ -150,35 +156,37 @@
             BackgroundImage = Properties.Resources.Beige_and_Brown_Minimalist_Coffee_Shop_Video;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1125, 640);
-            Controls.Add(btnThoat);
-            Controls.Add(btnQuanLyTaiKhoan);
-            Controls.Add(btnQuanLyThongKe);
-            Controls.Add(btnKhuyenMai);
-            Controls.Add(btnQuanLyVatDung);
-            Controls.Add(btnQuanLySanPham);
-            Controls.Add(btnQuanLyLoaiSanPham);
-            Controls.Add(btnQuanLyPhieuBanHang);
-            Controls.Add(btnQuanLyThe);
-            Controls.Add(btnQuanLyNhanVien);
+            Controls.Add(pnMain);
+            Controls.Add(menuStrip1);
             DoubleBuffered = true;
+            MainMenuStrip = menuStrip1;
             Name = "frmMainForm";
             Text = "frmMainForm";
+            Load += frmMainForm_Load;
+            menuStrip1.ResumeLayout(false);
+            menuStrip1.PerformLayout();
             ResumeLayout(false);
+            PerformLayout();
         }
 
         #endregion
 
         private System.ComponentModel.BackgroundWorker backgroundWorker1;
-        private Button btnQuanLyNhanVien;
-        private Button btnQuanLyThe;
-        private Button btnQuanLyPhieuBanHang;
-        private Button btnQuanLyLoaiSanPham;
-        private Button btnQuanLySanPham;
-        private Button btnQuanLyVatDung;
-        private Button btnKhuyenMai;
-        private Button btnQuanLyThongKe;
-        private Button btnQuanLyTaiKhoan;
-        private Button btnThoat;
         private System.ComponentModel.BackgroundWorker backgroundWorker2;
+        private MenuStrip menuStrip1;
+        private ToolStripMenuItem hệThốngToolStripMenuItem;
+        private ToolStripMenuItem danhMụcToolStripMenuItem;
+        private ToolStripMenuItem bánHàngToolStripMenuItem;
+        private ToolStripMenuItem đổiMậtKhẩuToolStripMenuItem;
+        private ToolStripMenuItem đăngXuấtToolStripMenuItem;
+        private ToolStripMenuItem nhânViênToolStripMenuItem;
+        private ToolStripMenuItem doanhThuToolStripMenuItem;
+        private ToolStripMenuItem hướngDẫnToolStripMenuItem;
+        private ToolStripMenuItem thôngTinTàiKhoànToolStripMenuItem;
+        private ToolStripMenuItem thoátToolStripMenuItem;
+        private ToolStripMenuItem quảnLýSảnPhẩmToolStripMenuItem;
+        private ToolStripMenuItem quảnLýLoạiSảnPhẩmToolStripMenuItem;
+        private ToolStripMenuItem thốngKêToolStripMenuItem;
+        private Panel pnMain;
     }
 }
