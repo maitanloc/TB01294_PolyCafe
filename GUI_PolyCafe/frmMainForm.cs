@@ -15,7 +15,6 @@ namespace GUI_PolyCafe
         public frmMainForm()
         {
             InitializeComponent();
-           
         }
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -26,7 +25,9 @@ namespace GUI_PolyCafe
 
         private void frmMainForm_Load(object sender, EventArgs e)
         {
-            openChildForm(new frmNhanVien());
+            // Nếu muốn khi mở chương trình sẽ load form Nhân viên vào panel
+            // openChildForm(new frmNhanVien());
+            // Hoặc để trống nếu không cần
         }
 
         private Form CurrentFormChild;
@@ -45,16 +46,14 @@ namespace GUI_PolyCafe
             pnMain.Tag = childForm;
             childForm.BringToFront();
             childForm.Show();
-
-
         }
 
-
-
+        // Sự kiện menu "Nhân viên" - Mở ra 1 cửa sổ mới
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
             frmNhanVien frmNhanVien = new frmNhanVien();
-            openChildForm(new  frmNhanVien());
+            frmNhanVien.Show();
+            // Nếu muốn modal (phải đóng mới thao tác tiếp được): dùng ShowDialog() thay vì Show()
         }
 
         private void pnMain_Paint(object sender, PaintEventArgs e)

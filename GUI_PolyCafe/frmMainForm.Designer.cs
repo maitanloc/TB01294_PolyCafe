@@ -54,7 +54,7 @@
             menuStrip1.Items.AddRange(new ToolStripItem[] { hệThốngToolStripMenuItem, danhMụcToolStripMenuItem, bánHàngToolStripMenuItem, nhânViênToolStripMenuItem, doanhThuToolStripMenuItem, hướngDẫnToolStripMenuItem });
             menuStrip1.Location = new Point(0, 0);
             menuStrip1.Name = "menuStrip1";
-            menuStrip1.Size = new Size(1125, 28);
+            menuStrip1.Size = new Size(1127, 28);
             menuStrip1.TabIndex = 9;
             menuStrip1.Text = "menuStrip1";
             // 
@@ -143,9 +143,9 @@
             // 
             // pnMain
             // 
-            pnMain.Location = new Point(0, 618);
+            pnMain.Location = new Point(0, 535);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(1134, 35);
+            pnMain.Size = new Size(1134, 54);
             pnMain.TabIndex = 10;
             pnMain.Paint += pnMain_Paint;
             // 
@@ -155,7 +155,7 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImage = Properties.Resources.Beige_and_Brown_Minimalist_Coffee_Shop_Video;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1125, 640);
+            ClientSize = new Size(1127, 588);
             Controls.Add(pnMain);
             Controls.Add(menuStrip1);
             DoubleBuffered = true;

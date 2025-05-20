@@ -33,21 +33,27 @@
             txtTimKemNhanVien = new TextBox();
             btnTimKiemNhanVien = new Button();
             groupBox1 = new GroupBox();
-            lblThongTinNhanVien = new Label();
-            lblMaNV = new Label();
-            lblHoTen = new Label();
-            lblEmail = new Label();
-            lblMatKhau = new Label();
-            lblDiaChi = new Label();
-            lblVaiTro = new Label();
-            lblTinhTrang = new Label();
-            txtMaNV = new TextBox();
-            txtHoTen = new TextBox();
-            txtEmail = new TextBox();
-            txtMatKhau = new TextBox();
-            txtDiaChi = new TextBox();
-            cboVaiTro = new ComboBox();
             cboTinhTrang = new ComboBox();
+            cboVaiTro = new ComboBox();
+            txtDiaChi = new TextBox();
+            txtMatKhau = new TextBox();
+            txtEmail = new TextBox();
+            txtHoTen = new TextBox();
+            txtMaNV = new TextBox();
+            lblTinhTrang = new Label();
+            lblVaiTro = new Label();
+            lblDiaChi = new Label();
+            lblMatKhau = new Label();
+            lblEmail = new Label();
+            lblHoTen = new Label();
+            lblMaNV = new Label();
+            lblThongTinNhanVien = new Label();
+            btnThemNhanVien = new Button();
+            btnSuaNhanVien = new Button();
+            btnDanhSachNhanVien = new Button();
+            btnXoaNhanVien = new Button();
+            btnLamMoiNhanVien = new Button();
+            btnThoatNhanVien = new Button();
             ((System.ComponentModel.ISupportInitialize)dataGridView1).BeginInit();
             groupBox1.SuspendLayout();
             SuspendLayout();
@@ -110,69 +116,56 @@
             groupBox1.TabStop = false;
             groupBox1.Text = "groupBox1";
             // 
-            // lblThongTinNhanVien
+            // cboTinhTrang
             // 
-            lblThongTinNhanVien.AutoSize = true;
-            lblThongTinNhanVien.Font = new Font("Script MT Bold", 20F);
-            lblThongTinNhanVien.Location = new Point(21, 325);
-            lblThongTinNhanVien.Name = "lblThongTinNhanVien";
-            lblThongTinNhanVien.Size = new Size(253, 41);
-            lblThongTinNhanVien.TabIndex = 5;
-            lblThongTinNhanVien.Text = "Nhập Thông Tin";
+            cboTinhTrang.FormattingEnabled = true;
+            cboTinhTrang.Location = new Point(667, 135);
+            cboTinhTrang.Name = "cboTinhTrang";
+            cboTinhTrang.Size = new Size(411, 28);
+            cboTinhTrang.TabIndex = 13;
             // 
-            // lblMaNV
+            // cboVaiTro
             // 
-            lblMaNV.AutoSize = true;
-            lblMaNV.Location = new Point(28, 31);
-            lblMaNV.Name = "lblMaNV";
-            lblMaNV.Size = new Size(54, 20);
-            lblMaNV.TabIndex = 0;
-            lblMaNV.Text = "Mã NV";
+            cboVaiTro.FormattingEnabled = true;
+            cboVaiTro.Location = new Point(667, 88);
+            cboVaiTro.Name = "cboVaiTro";
+            cboVaiTro.Size = new Size(411, 28);
+            cboVaiTro.TabIndex = 12;
             // 
-            // lblHoTen
+            // txtDiaChi
             // 
-            lblHoTen.AutoSize = true;
-            lblHoTen.Location = new Point(28, 70);
-            lblHoTen.Name = "lblHoTen";
-            lblHoTen.Size = new Size(56, 20);
-            lblHoTen.TabIndex = 1;
-            lblHoTen.Text = "Họ Tên";
+            txtDiaChi.Location = new Point(667, 31);
+            txtDiaChi.Name = "txtDiaChi";
+            txtDiaChi.Size = new Size(413, 27);
+            txtDiaChi.TabIndex = 11;
             // 
-            // lblEmail
+            // txtMatKhau
             // 
-            lblEmail.AutoSize = true;
-            lblEmail.Location = new Point(28, 114);
-            lblEmail.Name = "lblEmail";
-            lblEmail.Size = new Size(46, 20);
-            lblEmail.TabIndex = 2;
-            lblEmail.Text = "Email";
+            txtMatKhau.Location = new Point(98, 157);
+            txtMatKhau.Name = "txtMatKhau";
+            txtMatKhau.Size = new Size(413, 27);
+            txtMatKhau.TabIndex = 10;
             // 
-            // lblMatKhau
+            // txtEmail
             // 
-            lblMatKhau.AutoSize = true;
-            lblMatKhau.Location = new Point(28, 160);
-            lblMatKhau.Name = "lblMatKhau";
-            lblMatKhau.Size = new Size(72, 20);
-            lblMatKhau.TabIndex = 3;
-            lblMatKhau.Text = "Mật Khẩu";
+            txtEmail.Location = new Point(98, 114);
+            txtEmail.Name = "txtEmail";
+            txtEmail.Size = new Size(413, 27);
+            txtEmail.TabIndex = 9;
             // 
-            // lblDiaChi
+            // txtHoTen
             // 
-            lblDiaChi.AutoSize = true;
-            lblDiaChi.Location = new Point(583, 31);
-            lblDiaChi.Name = "lblDiaChi";
-            lblDiaChi.Size = new Size(57, 20);
-            lblDiaChi.TabIndex = 4;
-            lblDiaChi.Text = "Địa Chỉ";
+            txtHoTen.Location = new Point(98, 70);
+            txtHoTen.Name = "txtHoTen";
+            txtHoTen.Size = new Size(413, 27);
+            txtHoTen.TabIndex = 8;
             // 
-            // lblVaiTro
+            // txtMaNV
             // 
-            lblVaiTro.AutoSize = true;
-            lblVaiTro.Location = new Point(583, 91);
-            lblVaiTro.Name = "lblVaiTro";
-            lblVaiTro.Size = new Size(54, 20);
-            lblVaiTro.TabIndex = 5;
-            lblVaiTro.Text = "Vai Trò";
+            txtMaNV.Location = new Point(98, 28);
+            txtMaNV.Name = "txtMaNV";
+            txtMaNV.Size = new Size(413, 27);
+            txtMaNV.TabIndex = 7;
             // 
             // lblTinhTrang
             // 
@@ -183,56 +176,123 @@
             lblTinhTrang.TabIndex = 6;
             lblTinhTrang.Text = "Tình Trạng";
             // 
-            // txtMaNV
+            // lblVaiTro
             // 
-            txtMaNV.Location = new Point(98, 28);
-            txtMaNV.Name = "txtMaNV";
-            txtMaNV.Size = new Size(413, 27);
-            txtMaNV.TabIndex = 7;
+            lblVaiTro.AutoSize = true;
+            lblVaiTro.Location = new Point(583, 91);
+            lblVaiTro.Name = "lblVaiTro";
+            lblVaiTro.Size = new Size(54, 20);
+            lblVaiTro.TabIndex = 5;
+            lblVaiTro.Text = "Vai Trò";
             // 
-            // txtHoTen
+            // lblDiaChi
             // 
-            txtHoTen.Location = new Point(98, 70);
-            txtHoTen.Name = "txtHoTen";
-            txtHoTen.Size = new Size(413, 27);
-            txtHoTen.TabIndex = 8;
+            lblDiaChi.AutoSize = true;
+            lblDiaChi.Location = new Point(583, 31);
+            lblDiaChi.Name = "lblDiaChi";
+            lblDiaChi.Size = new Size(57, 20);
+            lblDiaChi.TabIndex = 4;
+            lblDiaChi.Text = "Địa Chỉ";
             // 
-            // txtEmail
+            // lblMatKhau
             // 
-            txtEmail.Location = new Point(98, 114);
-            txtEmail.Name = "txtEmail";
-            txtEmail.Size = new Size(413, 27);
-            txtEmail.TabIndex = 9;
+            lblMatKhau.AutoSize = true;
+            lblMatKhau.Location = new Point(28, 160);
+            lblMatKhau.Name = "lblMatKhau";
+            lblMatKhau.Size = new Size(72, 20);
+            lblMatKhau.TabIndex = 3;
+            lblMatKhau.Text = "Mật Khẩu";
             // 
-            // txtMatKhau
+            // lblEmail
             // 
-            txtMatKhau.Location = new Point(98, 157);
-            txtMatKhau.Name = "txtMatKhau";
-            txtMatKhau.Size = new Size(413, 27);
-            txtMatKhau.TabIndex = 10;
+            lblEmail.AutoSize = true;
+            lblEmail.Location = new Point(28, 114);
+            lblEmail.Name = "lblEmail";
+            lblEmail.Size = new Size(46, 20);
+            lblEmail.TabIndex = 2;
+            lblEmail.Text = "Email";
             // 
-            // txtDiaChi
+            // lblHoTen
             // 
-            txtDiaChi.Location = new Point(667, 31);
-            txtDiaChi.Name = "txtDiaChi";
-            txtDiaChi.Size = new Size(413, 27);
-            txtDiaChi.TabIndex = 11;
+            lblHoTen.AutoSize = true;
+            lblHoTen.Location = new Point(28, 70);
+            lblHoTen.Name = "lblHoTen";
+            lblHoTen.Size = new Size(56, 20);
+            lblHoTen.TabIndex = 1;
+            lblHoTen.Text = "Họ Tên";
             // 
-            // cboVaiTro
+            // lblMaNV
             // 
-            cboVaiTro.FormattingEnabled = true;
-            cboVaiTro.Location = new Point(667, 88);
-            cboVaiTro.Name = "cboVaiTro";
-            cboVaiTro.Size = new Size(411, 28);
-            cboVaiTro.TabIndex = 12;
+            lblMaNV.AutoSize = true;
+            lblMaNV.Location = new Point(28, 31);
+            lblMaNV.Name = "lblMaNV";
+            lblMaNV.Size = new Size(54, 20);
+            lblMaNV.TabIndex = 0;
+            lblMaNV.Text = "Mã NV";
             // 
-            // cboTinhTrang
+            // lblThongTinNhanVien
             // 
-            cboTinhTrang.FormattingEnabled = true;
-            cboTinhTrang.Location = new Point(667, 135);
-            cboTinhTrang.Name = "cboTinhTrang";
-            cboTinhTrang.Size = new Size(411, 28);
-            cboTinhTrang.TabIndex = 13;
+            lblThongTinNhanVien.AutoSize = true;
+            lblThongTinNhanVien.Font = new Font("Script MT Bold", 20F);
+            lblThongTinNhanVien.Location = new Point(21, 325);
+            lblThongTinNhanVien.Name = "lblThongTinNhanVien";
+            lblThongTinNhanVien.Size = new Size(253, 41);
+            lblThongTinNhanVien.TabIndex = 5;
+            lblThongTinNhanVien.Text = "Nhập Thông Tin";
+            // 
+            // btnThemNhanVien
+            // 
+            btnThemNhanVien.Location = new Point(21, 577);
+            btnThemNhanVien.Name = "btnThemNhanVien";
+            btnThemNhanVien.Size = new Size(157, 72);
+            btnThemNhanVien.TabIndex = 6;
+            btnThemNhanVien.Text = "Thêm";
+            btnThemNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // btnSuaNhanVien
+            // 
+            btnSuaNhanVien.Location = new Point(207, 577);
+            btnSuaNhanVien.Name = "btnSuaNhanVien";
+            btnSuaNhanVien.Size = new Size(142, 72);
+            btnSuaNhanVien.TabIndex = 7;
+            btnSuaNhanVien.Text = "Sửa";
+            btnSuaNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // btnDanhSachNhanVien
+            // 
+            btnDanhSachNhanVien.Location = new Point(388, 577);
+            btnDanhSachNhanVien.Name = "btnDanhSachNhanVien";
+            btnDanhSachNhanVien.Size = new Size(144, 72);
+            btnDanhSachNhanVien.TabIndex = 8;
+            btnDanhSachNhanVien.Text = "Danh Sách";
+            btnDanhSachNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // btnXoaNhanVien
+            // 
+            btnXoaNhanVien.Location = new Point(594, 577);
+            btnXoaNhanVien.Name = "btnXoaNhanVien";
+            btnXoaNhanVien.Size = new Size(150, 72);
+            btnXoaNhanVien.TabIndex = 9;
+            btnXoaNhanVien.Text = "Xóa";
+            btnXoaNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // btnLamMoiNhanVien
+            // 
+            btnLamMoiNhanVien.Location = new Point(785, 577);
+            btnLamMoiNhanVien.Name = "btnLamMoiNhanVien";
+            btnLamMoiNhanVien.Size = new Size(144, 72);
+            btnLamMoiNhanVien.TabIndex = 10;
+            btnLamMoiNhanVien.Text = "Làm Mới";
+            btnLamMoiNhanVien.UseVisualStyleBackColor = true;
+            // 
+            // btnThoatNhanVien
+            // 
+            btnThoatNhanVien.Location = new Point(975, 577);
+            btnThoatNhanVien.Name = "btnThoatNhanVien";
+            btnThoatNhanVien.Size = new Size(148, 72);
+            btnThoatNhanVien.TabIndex = 11;
+            btnThoatNhanVien.Text = "Thoát";
+            btnThoatNhanVien.UseVisualStyleBackColor = true;
             // 
             // frmNhanVien
             // 
@@ -240,6 +300,12 @@
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1145, 691);
+            Controls.Add(btnThoatNhanVien);
+            Controls.Add(btnLamMoiNhanVien);
+            Controls.Add(btnXoaNhanVien);
+            Controls.Add(btnDanhSachNhanVien);
+            Controls.Add(btnSuaNhanVien);
+            Controls.Add(btnThemNhanVien);
             Controls.Add(lblThongTinNhanVien);
             Controls.Add(groupBox1);
             Controls.Add(btnTimKiemNhanVien);
@@ -278,5 +344,11 @@
         private Label lblEmail;
         private Label lblHoTen;
         private Label lblMaNV;
+        private Button btnThemNhanVien;
+        private Button btnSuaNhanVien;
+        private Button btnDanhSachNhanVien;
+        private Button btnXoaNhanVien;
+        private Button btnLamMoiNhanVien;
+        private Button btnThoatNhanVien;
     }
 }
