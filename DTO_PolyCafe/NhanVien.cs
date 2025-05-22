@@ -18,6 +18,9 @@ namespace DTO_PolyCafe
 
         public bool TrangThai { get; set; }
 
+      
+
 
     }
 }
+

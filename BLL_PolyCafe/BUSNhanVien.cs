@@ -76,11 +76,32 @@ namespace BLL_PolyCafe
 
 
 
+        public void UpdateVaiTro(string maNhanVien, bool vaiTro)
+        {
+            dalNhanVien.updateVaiTro(maNhanVien, vaiTro);
+        }
 
-
-
+        public void UpdateTrangThai(string maNhanVien, bool trangThai)
+        {
+            dalNhanVien.updateTrangThai(maNhanVien, trangThai);
+        }
+        // delete
+        public void DeleteNhanVien(string maNhanVien)
+        {
+            dalNhanVien.delete(maNhanVien);
+        }
+        public void UpdateNhanVien(NhanVien nv)
+        {
+            dalNhanVien.update(nv);
+        }
     }
 }
+
+
+
+
+
+
 
 
 

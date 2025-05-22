@@ -79,6 +79,7 @@
             dgvNhanVien.Size = new Size(1108, 253);
             dgvNhanVien.TabIndex = 1;
             dgvNhanVien.CellClick += dgvNhanVien_CellClick;
+            dgvNhanVien.CellFormatting += dgvNhanVien_CellFormatting;
             // 
             // txtTimKemNhanVien
             // 
@@ -304,6 +305,7 @@
             btnXoaNhanVien.TabIndex = 9;
             btnXoaNhanVien.Text = "Xóa";
             btnXoaNhanVien.UseVisualStyleBackColor = true;
+            btnXoaNhanVien.Click += btnXoaNhanVien_Click_1;
             // 
             // btnLamMoiNhanVien
             // 
@@ -323,6 +325,7 @@
             btnThoatNhanVien.TabIndex = 11;
             btnThoatNhanVien.Text = "Thoát";
             btnThoatNhanVien.UseVisualStyleBackColor = true;
+            btnThoatNhanVien.Click += btnThoatNhanVien_Click;
             // 
             // frmNhanVien
             // 
