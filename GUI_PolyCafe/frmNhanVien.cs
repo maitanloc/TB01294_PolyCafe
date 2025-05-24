@@ -341,5 +341,10 @@ namespace GUI_PolyCafe
                 dgvNhanVien.Refresh();
             }
         }
+
+        private void guna2vTrackBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+        }
     }
 }

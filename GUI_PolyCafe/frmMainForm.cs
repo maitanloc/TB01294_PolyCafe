@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using UTIL_PolyCafe;
 
 namespace GUI_PolyCafe
 {
@@ -15,6 +16,7 @@ namespace GUI_PolyCafe
         public frmMainForm()
         {
             InitializeComponent();
+            CheckPermisson();
         }
 
         private void đổiMậtKhẩuToolStripMenuItem_Click(object sender, EventArgs e)
@@ -51,15 +53,55 @@ namespace GUI_PolyCafe
         // Sự kiện menu "Nhân viên" - Mở ra 1 cửa sổ mới
         private void nhânViênToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            //openChildForm(new frmNhanVien());
-            //// Nếu muốn modal (phải đóng mới thao tác tiếp được): dùng ShowDialog() thay vì Show()
-            ///
+            openChildForm(new frmNhanVien());
+
 
             frmNhanVien frmNhanVien = new frmNhanVien();
         }
 
         private void pnMain_Paint(object sender, PaintEventArgs e)
         {
+
+        }
+        private void VaiTroNhanVien()
+        {
+            danhmucToolStripMenuItem.Enabled = false;
+            nhanvienToolStripMenuItem.Enabled = false;
+            doanhthuToolStripMenuItem.Enabled = false;
+        }
+        private void CheckPermisson()
+        {
+            if (AuthUtil.isLogin())
+            {
+
+                danhmucToolStripMenuItem.Visible = true;
+                banhangToolStripMenuItem.Visible = true;
+                nhanvienToolStripMenuItem.Visible = true;
+                doanhthuToolStripMenuItem.Visible = true;
+                if (AuthUtil.user.VaiTro == false)
+                {
+                    VaiTroNhanVien();
+                }
+            }
+            else
+            {
+                hethongToolStripMenuItem.Visible = true; // Xác định xem điều khiển có hiển thị trên giao diện hay không.
+                dangxuatToolStripMenuItem.Enabled = false; // Xác định xem điều khiển có thể tương tác hay không.
+                thongtintaikhoanToolStripMenuItem.Enabled = false;
+                danhmucToolStripMenuItem.Visible = false;
+                banhangToolStripMenuItem.Visible = false;
+                nhanvienToolStripMenuItem.Visible = false;
+                doanhthuToolStripMenuItem.Visible = false;
+            }
+
+
+
+        }
+
+        private void banhangToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmTheLuuDong());
+            frmTheLuuDong frmTheLuuDong = new frmTheLuuDong();
 
         }
     }
