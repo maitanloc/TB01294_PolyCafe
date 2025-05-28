@@ -148,9 +148,9 @@
             // pnMain
             // 
             pnMain.BackColor = Color.Transparent;
-            pnMain.Location = new Point(3, 31);
+            pnMain.Location = new Point(0, 31);
             pnMain.Name = "pnMain";
-            pnMain.Size = new Size(1334, 632);
+            pnMain.Size = new Size(1337, 632);
             pnMain.TabIndex = 10;
             pnMain.Paint += pnMain_Paint;
             // 
