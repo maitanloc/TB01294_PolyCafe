@@ -74,14 +74,14 @@
             dgvNhanVien.Location = new Point(15, 58);
             dgvNhanVien.Name = "dgvNhanVien";
             dgvNhanVien.RowHeadersWidth = 51;
-            dgvNhanVien.Size = new Size(1108, 253);
+            dgvNhanVien.Size = new Size(1390, 253);
             dgvNhanVien.TabIndex = 1;
             dgvNhanVien.CellClick += dgvNhanVien_CellClick;
             dgvNhanVien.CellFormatting += dgvNhanVien_CellFormatting;
             // 
             // txtTimKemNhanVien
             // 
-            txtTimKemNhanVien.Location = new Point(703, 23);
+            txtTimKemNhanVien.Location = new Point(975, 16);
             txtTimKemNhanVien.Name = "txtTimKemNhanVien";
             txtTimKemNhanVien.Size = new Size(299, 27);
             txtTimKemNhanVien.TabIndex = 2;
@@ -90,7 +90,7 @@
             // btnTimKiemNhanVien
             // 
             btnTimKiemNhanVien.Font = new Font("Sitka Small Semibold", 9F);
-            btnTimKiemNhanVien.Location = new Point(1011, 23);
+            btnTimKiemNhanVien.Location = new Point(1280, 19);
             btnTimKiemNhanVien.Name = "btnTimKiemNhanVien";
             btnTimKiemNhanVien.Size = new Size(112, 29);
             btnTimKiemNhanVien.TabIndex = 3;
@@ -116,7 +116,7 @@
             grpNhanVien.Font = new Font("Segoe UI Black", 9F);
             grpNhanVien.Location = new Point(21, 369);
             grpNhanVien.Name = "grpNhanVien";
-            grpNhanVien.Size = new Size(1102, 202);
+            grpNhanVien.Size = new Size(1384, 202);
             grpNhanVien.TabIndex = 4;
             grpNhanVien.TabStop = false;
             grpNhanVien.Text = "Nhân Viên";
@@ -276,7 +276,7 @@
             // btnThemNhanVien
             // 
             btnThemNhanVien.Cursor = Cursors.Hand;
-            btnThemNhanVien.Location = new Point(21, 577);
+            btnThemNhanVien.Location = new Point(21, 666);
             btnThemNhanVien.Name = "btnThemNhanVien";
             btnThemNhanVien.Size = new Size(157, 53);
             btnThemNhanVien.TabIndex = 6;
@@ -287,7 +287,7 @@
             // btnSuaNhanVien
             // 
             btnSuaNhanVien.Cursor = Cursors.Hand;
-            btnSuaNhanVien.Location = new Point(207, 577);
+            btnSuaNhanVien.Location = new Point(218, 666);
             btnSuaNhanVien.Name = "btnSuaNhanVien";
             btnSuaNhanVien.Size = new Size(142, 53);
             btnSuaNhanVien.TabIndex = 7;
@@ -298,7 +298,7 @@
             // btnXoaNhanVien
             // 
             btnXoaNhanVien.Cursor = Cursors.Hand;
-            btnXoaNhanVien.Location = new Point(604, 577);
+            btnXoaNhanVien.Location = new Point(594, 666);
             btnXoaNhanVien.Name = "btnXoaNhanVien";
             btnXoaNhanVien.Size = new Size(150, 53);
             btnXoaNhanVien.TabIndex = 9;
@@ -309,7 +309,7 @@
             // btnLamMoiNhanVien
             // 
             btnLamMoiNhanVien.Cursor = Cursors.Hand;
-            btnLamMoiNhanVien.Location = new Point(400, 577);
+            btnLamMoiNhanVien.Location = new Point(402, 666);
             btnLamMoiNhanVien.Name = "btnLamMoiNhanVien";
             btnLamMoiNhanVien.Size = new Size(144, 53);
             btnLamMoiNhanVien.TabIndex = 10;
@@ -320,7 +320,7 @@
             // btnThoatNhanVien
             // 
             btnThoatNhanVien.Cursor = Cursors.Hand;
-            btnThoatNhanVien.Location = new Point(975, 577);
+            btnThoatNhanVien.Location = new Point(775, 666);
             btnThoatNhanVien.Name = "btnThoatNhanVien";
             btnThoatNhanVien.Size = new Size(148, 53);
             btnThoatNhanVien.TabIndex = 11;
@@ -333,7 +333,7 @@
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
-            ClientSize = new Size(1134, 635);
+            ClientSize = new Size(1444, 744);
             Controls.Add(btnThoatNhanVien);
             Controls.Add(btnLamMoiNhanVien);
             Controls.Add(btnXoaNhanVien);

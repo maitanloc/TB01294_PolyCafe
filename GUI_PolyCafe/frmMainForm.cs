@@ -104,5 +104,42 @@ namespace GUI_PolyCafe
             frmTheLuuDong frmTheLuuDong = new frmTheLuuDong();
 
         }
+
+        private void btnHeThong_Click(object sender, EventArgs e)
+        {
+            pnHeThong.Visible = !pnHeThong.Visible;
+
+        }
+
+        private void pnHeThong_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnDanhMuc_Click(object sender, EventArgs e)
+        {
+            pnDanhMuc.Visible = !pnDanhMuc.Visible;
+        }
+
+        private void btnBanHang_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmTheLuuDong());
+            frmTheLuuDong frmTheLuuDong = new frmTheLuuDong();
+        }
+
+        private void btnNhanVien_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmNhanVien());
+
+
+            frmNhanVien frmNhanVien = new frmNhanVien();
+
+        }
+
+        private void btnDoiMatKhau_Click(object sender, EventArgs e)
+        {
+            frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau();
+            frmDoiMatKhau.ShowDialog();
+        }
     }
 }
