@@ -106,6 +106,7 @@ namespace GUI_PolyCafe
                 string maLoai = cboMaLoai.SelectedValue?.ToString();
                 bool trangThai = rdbActive.Checked;
 
+
                 // Kiểm tra dữ liệu nhập vào
                 if (string.IsNullOrEmpty(tenSP) || string.IsNullOrEmpty(donGiaText) || string.IsNullOrEmpty(maLoai))
                 {
@@ -207,66 +208,119 @@ namespace GUI_PolyCafe
             string tenSP = string.Empty;
             string hinhAnh = string.Empty;
 
+            // If maSP is empty, try to get it from the selected DataGridView row
             if (string.IsNullOrEmpty(maSP))
             {
-
-                if (string.IsNullOrEmpty(maSP))
+                if (dgvSanPham.SelectedRows.Count > 0)
                 {
-                    if (dgvSanPham.SelectedRows.Count > 0)
-                    {
-                        DataGridViewRow selectedRow = dgvSanPham.SelectedRows[0];
-                        maSP = selectedRow.Cells["MaSanPham"].Value.ToString();
-                        tenSP = selectedRow.Cells["TenSanPham"].Value.ToString();
-                        hinhAnh = selectedRow.Cells["HinhAnh"].Value.ToString();
-                    }
-                    else
-                    {
-                        MessageBox.Show("Vui lòng chọn một sản phẩm để xóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                        return;
-                    }
+                    DataGridViewRow selectedRow = dgvSanPham.SelectedRows[0];
+                    maSP = selectedRow.Cells["MaSanPham"].Value?.ToString();
+                    tenSP = selectedRow.Cells["TenSanPham"].Value?.ToString();
+                    hinhAnh = selectedRow.Cells["HinhAnh"].Value?.ToString();
                 }
                 else
                 {
-                    tenSP = txtTenSanPham.Text.Trim();
-                }
-
-                if (string.IsNullOrEmpty(maSP))
-                {
-                    MessageBox.Show("Xóa không thành công.");
+                    MessageBox.Show("Vui lòng nhập mã sản phẩm hoặc chọn một sản phẩm để xóa!",
+                        "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
                     return;
                 }
-
-                DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm {maSP} - {tenSP}?", "Xác nhận xóa",
-                    MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
-
-                if (result == DialogResult.Yes)
-                {
-                    BUSSanPham bus = new BUSSanPham();
-                    string kq = bus.DeleteSanPham(maSP);
-
-                    if (string.IsNullOrEmpty(kq))
-                    {
-
-                        MessageBox.Show($"Xóa thông tin sản phẩm {maSP} - {tenSP} thành công!", "Thông báo",
-                            MessageBoxButtons.OK, MessageBoxIcon.Information);
-                        ClearForm();
-                        LoadDanhSachSanPham();
-                    }
-                    else
-                    {
-                        MessageBox.Show(kq, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
-                    }
-
-                }
+            }
+            else
+            {
+                tenSP = txtTenSanPham.Text.Trim();
             }
 
+            // Ensure maSP is not empty before proceeding
+            if (string.IsNullOrEmpty(maSP))
+            {
+                MessageBox.Show("Mã sản phẩm không hợp lệ.", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                return;
+            }
 
+            // Confirm deletion with user
+            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa sản phẩm {maSP} - {tenSP}?",
+                "Xác nhận xóa", MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                BUSSanPham bus = new BUSSanPham();
+                string kq = bus.DeleteSanPham(maSP);
+
+                if (string.IsNullOrEmpty(kq))
+                {
+                    MessageBox.Show($"Xóa thông tin sản phẩm {maSP} - {tenSP} thành công!",
+                        "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearForm();
+                    LoadDanhSachSanPham();
+                }
+                else
+                {
+                    MessageBox.Show(kq, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+            }
         }
 
         private void btnChonAnh_Click(object sender, EventArgs e)
         {
 
+            try
+            {
+                // Tạo một đối tượng OpenFileDialog
+                OpenFileDialog openFileDialog = new OpenFileDialog();
 
+                // Thiết lập bộ lọc để chỉ cho phép các file ảnh
+                openFileDialog.Filter = "Image Files|*.jpg;*.jpeg;*.png;*.bmp|All Files|*.*";
+                openFileDialog.Title = "Chọn hình ảnh sản phẩm";
+
+                // Hiển thị hộp thoại và kiểm tra nếu người dùng chọn file
+                if (openFileDialog.ShowDialog() == DialogResult.OK)
+                {
+                    // Lấy đường dẫn file ảnh
+                    string imagePath = openFileDialog.FileName;
+
+                    // Hiển thị ảnh lên PictureBox
+                    pbHinhAnh.Image = Image.FromFile(imagePath);
+
+                    // (Tùy chọn) Lưu đường dẫn ảnh vào một biến hoặc đối tượng SanPham
+                    // Ví dụ: sp.HinhAnh = imagePath; (sử dụng trong btnThem hoặc btnSua)
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi chọn ảnh: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+
+        }
+
+        private void TimKiem()
+        {
+            try
+            {
+                string searchValue = txtTimKiem.Text.Trim(); // Sử dụng TextBox riêng cho tìm kiếm
+                BUSSanPham busSanPham = new BUSSanPham();
+
+                // Gọi phương thức SearchSanPham từ BUSSanPham
+                List<SanPham> result = busSanPham.SearchSanPham(searchValue);
+
+                // Cập nhật DataGridView
+                dgvSanPham.DataSource = null;
+                dgvSanPham.DataSource = result;
+
+                // Thông báo nếu không tìm thấy kết quả
+                if (result.Count == 0 && !string.IsNullOrEmpty(searchValue))
+                {
+                    MessageBox.Show("Không tìm thấy sản phẩm nào phù hợp!", "Thông báo", MessageBoxButtons.OK, MessageBoxIcon.Information);
+                }
+            }
+            catch (Exception ex)
+            {
+                MessageBox.Show("Lỗi khi tìm kiếm: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+            }
+        }
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            TimKiem();
         }
     }
 }

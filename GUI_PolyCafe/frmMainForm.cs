@@ -141,5 +141,23 @@ namespace GUI_PolyCafe
             frmDoiMatKhau frmDoiMatKhau = new frmDoiMatKhau();
             frmDoiMatKhau.ShowDialog();
         }
+
+        private void lblQuanLySanPham_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void btnSanPham_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmQuanLySanPham());
+            frmQuanLySanPham frmquanlysanpham = new frmQuanLySanPham();
+        }
+
+        private void btnLoaiSanPham_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmQuanLyLoaiSanPham());
+            frmQuanLyLoaiSanPham frmquanlyloaisanpham = new frmQuanLyLoaiSanPham();
+
+        }
     }
 }

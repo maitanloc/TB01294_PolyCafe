@@ -18,26 +18,84 @@ namespace GUI_PolyCafe
         {
             InitializeComponent();
         }
-        private void btnThemLoaiSP_Click(object sender, EventArgs e)
+
+
+
+
+
+
+        private void ClearForm()
         {
+            btnThem.Enabled = true;
+            btnSua.Enabled = false;
+            btnXoa.Enabled = true;
+            txtMaLoaiSanPham.Clear();
+            txtGhiChu.Clear();
+            txtTenLoaiSanPham.Clear();
+        }
+
+        private void LoadDanhSachLoaiSP()
+        {
+            BUSLoaiSanPham busLoaiSp = new BUSLoaiSanPham();
+            dgvLoaiSanPham.DataSource = null;
+            dgvLoaiSanPham.DataSource = busLoaiSp.GetLoaiSanPhamList();
+            dgvLoaiSanPham.Columns["MaLoai"].HeaderText = "Mã Loại";
+            dgvLoaiSanPham.Columns["TenLoai"].HeaderText = "Tên Loại";
+            dgvLoaiSanPham.Columns["GhiChu"].HeaderText = "Ghi Chú";
+
+            dgvLoaiSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+        }
+
+        private void dgvLoaiSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            DataGridViewRow row = dgvLoaiSanPham.Rows[e.RowIndex];
+            // Đổ dữ liệu vào các ô nhập liệu trên form
+            txtMaLoaiSanPham.Text = row.Cells["MaLoai"].Value.ToString();
+            txtTenLoaiSanPham.Text = row.Cells["TenLoai"].Value.ToString();
+            txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();
+
+            // Bật nút "Sửa"
+            btnThem.Enabled = false;
+            btnSua.Enabled = true;
+            btnXoa.Enabled = true;
+            // Tắt chỉnh sửa mã thẻ
+            txtMaLoaiSanPham.Enabled = false;
+        }
+
+        private void frmQuanLyLoaiSanPham_Load(object sender, EventArgs e)
+        {
+            ClearForm();
+            LoadDanhSachLoaiSP();
+
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            ClearForm();
+            LoadDanhSachLoaiSP();
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+
             string maLoai = txtMaLoaiSanPham.Text.Trim();
             string tenLoai = txtTenLoaiSanPham.Text.Trim();
             string ghiChu = txtGhiChu.Text.Trim();
 
+
             if (string.IsNullOrEmpty(tenLoai))
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin thẻ lưu động.");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin loại sản phẩm.");
                 return;
             }
-
-            LoaiSanPham loai = new LoaiSanPham
+            LoaiSanPham loaiSanPham = new LoaiSanPham
             {
                 MaLoai = maLoai,
                 TenLoai = tenLoai,
                 GhiChu = ghiChu
             };
             BUSLoaiSanPham bus = new BUSLoaiSanPham();
-            string result = bus.InsertLoaiSanPham(loai);
+            string result = bus.UpdateLoaiSanPham(loaiSanPham);
 
             if (string.IsNullOrEmpty(result))
             {
@@ -50,7 +108,8 @@ namespace GUI_PolyCafe
                 MessageBox.Show(result);
             }
         }
-        private void btnXoaLoaiSP_Click(object sender, EventArgs e)
+
+        private void btnXoa_Click(object sender, EventArgs e)
         {
             string maLoai = txtMaLoaiSanPham.Text.Trim();
             string tenLoai = txtTenLoaiSanPham.Text.Trim();
@@ -99,26 +158,27 @@ namespace GUI_PolyCafe
 
             }
         }
-        private void btnSuaLoaiSP_Click(object sender, EventArgs e)
+
+        private void btnThem_Click(object sender, EventArgs e)
         {
             string maLoai = txtMaLoaiSanPham.Text.Trim();
             string tenLoai = txtTenLoaiSanPham.Text.Trim();
             string ghiChu = txtGhiChu.Text.Trim();
 
-
             if (string.IsNullOrEmpty(tenLoai))
             {
-                MessageBox.Show("Vui lòng điền đầy đủ thông tin loại sản phẩm.");
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin thẻ lưu động.");
                 return;
             }
-            LoaiSanPham loaiSanPham = new LoaiSanPham
+
+            LoaiSanPham loai = new LoaiSanPham
             {
                 MaLoai = maLoai,
                 TenLoai = tenLoai,
                 GhiChu = ghiChu
             };
             BUSLoaiSanPham bus = new BUSLoaiSanPham();
-            string result = bus.UpdateLoaiSanPham(loaiSanPham);
+            string result = bus.InsertLoaiSanPham(loai);
 
             if (string.IsNullOrEmpty(result))
             {
@@ -130,56 +190,27 @@ namespace GUI_PolyCafe
             {
                 MessageBox.Show(result);
             }
+
         }
-        private void btnMoiLoaiSP_Click(object sender, EventArgs e)
+
+        private void TimKiemLoaiSanPham()
         {
-            ClearForm();
-            LoadDanhSachLoaiSP();
+            string searchValue = txtTimKiem.Text.Trim();
+            if (string.IsNullOrEmpty(searchValue))
+            {
+                LoadDanhSachLoaiSP();
+                return;
+            }
+            BUSLoaiSanPham busLoaiSanPham = new BUSLoaiSanPham();
+            List<LoaiSanPham> list = busLoaiSanPham.GetLoaiSanPhamList();
+            var result = list.Where(lsp => lsp.TenLoai.ToLower().Contains(searchValue.ToLower())).ToList();
+            dgvLoaiSanPham.DataSource = result;
         }
-        private void frmLoaiSanPham_Load(object sender, EventArgs e)
+
+        private void btnTimKiem_Click(object sender, EventArgs e)
         {
-            ClearForm();
-            LoadDanhSachLoaiSP();
+            TimKiemLoaiSanPham();
         }
-
-        private void ClearForm()
-        {
-            btnThem.Enabled = true;
-            btnSua.Enabled = false;
-            btnXoa.Enabled = true;
-            txtMaLoaiSanPham.Clear();
-            txtGhiChu.Clear();
-            txtTenLoaiSanPham.Clear();
-        }
-
-        private void LoadDanhSachLoaiSP()
-        {
-            BUSLoaiSanPham busLoaiSp = new BUSLoaiSanPham();
-            dgvLoaiSanPham.DataSource = null;
-            dgvLoaiSanPham.DataSource = busLoaiSp.GetLoaiSanPhamList();
-            dgvLoaiSanPham.Columns["MaLoai"].HeaderText = "Mã Loại";
-            dgvLoaiSanPham.Columns["TenLoai"].HeaderText = "Tên Loại";
-            dgvLoaiSanPham.Columns["GhiChu"].HeaderText = "Ghi Chú";
-
-            dgvLoaiSanPham.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
-        }
-
-        private void dgvLoaiSanPham_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            DataGridViewRow row = dgvLoaiSanPham.Rows[e.RowIndex];
-            // Đổ dữ liệu vào các ô nhập liệu trên form
-            txtMaLoaiSanPham.Text = row.Cells["MaLoai"].Value.ToString();
-            txtTenLoaiSanPham.Text = row.Cells["TenLoai"].Value.ToString();
-            txtGhiChu.Text = row.Cells["GhiChu"].Value.ToString();
-
-            // Bật nút "Sửa"
-            btnThem.Enabled = false;
-            btnSua.Enabled = true;
-            btnXoa.Enabled = true;
-            // Tắt chỉnh sửa mã thẻ
-            txtMaLoaiSanPham.Enabled = false;
-        }
-
     }
 
 }

@@ -549,6 +549,7 @@
             btnLoaiSanPham.Size = new Size(58, 48);
             btnLoaiSanPham.TabIndex = 9;
             btnLoaiSanPham.UseTransparentBackground = true;
+            btnLoaiSanPham.Click += btnLoaiSanPham_Click;
             // 
             // lblQuanLySanPham
             // 
@@ -558,6 +559,7 @@
             lblQuanLySanPham.Size = new Size(68, 22);
             lblQuanLySanPham.TabIndex = 8;
             lblQuanLySanPham.Text = "Sản Phẩm";
+            lblQuanLySanPham.Click += lblQuanLySanPham_Click;
             // 
             // btnSanPham
             // 
@@ -581,6 +583,7 @@
             btnSanPham.Size = new Size(58, 48);
             btnSanPham.TabIndex = 7;
             btnSanPham.UseTransparentBackground = true;
+            btnSanPham.Click += btnSanPham_Click;
             // 
             // frmMainForm
             // 

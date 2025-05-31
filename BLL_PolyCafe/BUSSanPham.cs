@@ -76,5 +76,30 @@ namespace BLL_PolyCafe
                 return "Lỗi: " + ex.Message;
             }
         }
+        public List<SanPham> SearchSanPham(string searchValue, int trangThai = -1)
+        {
+            try
+            {
+                // Lấy danh sách sản phẩm từ DAL
+                List<SanPham> list = dalSanPham.selectAll(trangThai);
+
+                // Nếu searchValue rỗng hoặc null, trả về toàn bộ danh sách
+                if (string.IsNullOrEmpty(searchValue))
+                {
+                    return list;
+                }
+
+                // Tìm kiếm trên MaSanPham và TenSanPham, không phân biệt hoa thường
+                searchValue = searchValue.ToLower();
+                return list.Where(sp =>
+                    (sp.MaSanPham?.ToLower().Contains(searchValue) ?? false) ||
+                    (sp.TenSanPham?.ToLower().Contains(searchValue) ?? false)
+                ).ToList();
+            }
+            catch (Exception ex)
+            {
+                throw new Exception("Lỗi khi tìm kiếm sản phẩm: " + ex.Message);
+            }
+        }
     }
 }
