@@ -370,11 +370,14 @@
             // pbHinhAnh
             // 
             pbHinhAnh.CustomizableEdges = customizableEdges15;
+            pbHinhAnh.Image = Properties.Resources.Placeholder_view_vector_svg;
+            pbHinhAnh.ImageFlip = Guna.UI2.WinForms.Enums.FlipOrientation.Horizontal;
             pbHinhAnh.ImageRotate = 0F;
             pbHinhAnh.Location = new Point(1196, 341);
             pbHinhAnh.Name = "pbHinhAnh";
             pbHinhAnh.ShadowDecoration.CustomizableEdges = customizableEdges16;
             pbHinhAnh.Size = new Size(385, 185);
+            pbHinhAnh.SizeMode = PictureBoxSizeMode.StretchImage;
             pbHinhAnh.TabIndex = 19;
             pbHinhAnh.TabStop = false;
             // 

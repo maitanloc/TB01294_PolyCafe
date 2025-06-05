@@ -10,8 +10,9 @@
 
 namespace GUI_PolyCafe.Properties {
     using System;
-    
-    
+    using System.Drawing;
+
+
     /// <summary>
     ///   A strongly-typed resource class, for looking up localized strings, etc.
     /// </summary>
@@ -23,7 +24,7 @@ namespace GUI_PolyCafe.Properties {
     [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
     [global::System.Runtime.CompilerServices.CompilerGeneratedAttribute()]
     internal class Resources {
-        
+        internal static Image pay;
         private static global::System.Resources.ResourceManager resourceMan;
         
         private static global::System.Globalization.CultureInfo resourceCulture;
@@ -146,6 +147,16 @@ namespace GUI_PolyCafe.Properties {
         internal static System.Drawing.Bitmap Pica_pic_face_swap_20250411143123 {
             get {
                 object obj = ResourceManager.GetObject("Pica-pic_face_swap-20250411143123", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
+        internal static System.Drawing.Bitmap Placeholder_view_vector_svg {
+            get {
+                object obj = ResourceManager.GetObject("Placeholder_view_vector.svg", resourceCulture);
                 return ((System.Drawing.Bitmap)(obj));
             }
         }

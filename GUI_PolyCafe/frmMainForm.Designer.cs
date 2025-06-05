@@ -60,6 +60,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges35 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges36 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             backgroundWorker1 = new System.ComponentModel.BackgroundWorker();
             backgroundWorker2 = new System.ComponentModel.BackgroundWorker();
             menuStrip1 = new MenuStrip();
@@ -98,11 +104,17 @@
             btnLoaiSanPham = new Guna.UI2.WinForms.Guna2Button();
             lblQuanLySanPham = new Guna.UI2.WinForms.Guna2HtmlLabel();
             btnSanPham = new Guna.UI2.WinForms.Guna2Button();
+            pnPhieuBanHang = new Guna.UI2.WinForms.Guna2Panel();
+            lblChiTietPhieu = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2Button1 = new Guna.UI2.WinForms.Guna2Button();
+            lblPhieuBanHang = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            guna2Button2 = new Guna.UI2.WinForms.Guna2Button();
             menuStrip1.SuspendLayout();
             guna2Panel1.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)guna2PictureBox1).BeginInit();
             pnHeThong.SuspendLayout();
             pnDanhMuc.SuspendLayout();
+            pnPhieuBanHang.SuspendLayout();
             SuspendLayout();
             // 
             // menuStrip1
@@ -585,12 +597,92 @@
             btnSanPham.UseTransparentBackground = true;
             btnSanPham.Click += btnSanPham_Click;
             // 
+            // pnPhieuBanHang
+            // 
+            pnPhieuBanHang.BackColor = Color.LightGray;
+            pnPhieuBanHang.Controls.Add(lblChiTietPhieu);
+            pnPhieuBanHang.Controls.Add(guna2Button1);
+            pnPhieuBanHang.Controls.Add(lblPhieuBanHang);
+            pnPhieuBanHang.Controls.Add(guna2Button2);
+            pnPhieuBanHang.CustomizableEdges = customizableEdges35;
+            pnPhieuBanHang.Location = new Point(151, 359);
+            pnPhieuBanHang.Name = "pnPhieuBanHang";
+            pnPhieuBanHang.ShadowDecoration.CustomizableEdges = customizableEdges36;
+            pnPhieuBanHang.Size = new Size(196, 190);
+            pnPhieuBanHang.TabIndex = 32;
+            pnPhieuBanHang.Visible = false;
+            // 
+            // lblChiTietPhieu
+            // 
+            lblChiTietPhieu.BackColor = Color.Transparent;
+            lblChiTietPhieu.Location = new Point(64, 155);
+            lblChiTietPhieu.Name = "lblChiTietPhieu";
+            lblChiTietPhieu.Size = new Size(93, 22);
+            lblChiTietPhieu.TabIndex = 10;
+            lblChiTietPhieu.Text = "Chi Tiết Phiếu";
+            // 
+            // guna2Button1
+            // 
+            guna2Button1.Animated = true;
+            guna2Button1.BackColor = Color.Transparent;
+            guna2Button1.CustomImages.HoveredImage = (Image)resources.GetObject("resource.HoveredImage11");
+            guna2Button1.CustomImages.Image = (Image)resources.GetObject("resource.Image11");
+            guna2Button1.CustomImages.ImageAlign = HorizontalAlignment.Center;
+            guna2Button1.CustomImages.ImageSize = new Size(30, 30);
+            guna2Button1.CustomizableEdges = customizableEdges31;
+            guna2Button1.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button1.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button1.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button1.FillColor = Color.Transparent;
+            guna2Button1.Font = new Font("Segoe UI", 9F);
+            guna2Button1.ForeColor = Color.White;
+            guna2Button1.Location = new Point(0, 129);
+            guna2Button1.Name = "guna2Button1";
+            guna2Button1.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            guna2Button1.Size = new Size(58, 48);
+            guna2Button1.TabIndex = 9;
+            guna2Button1.UseTransparentBackground = true;
+            // 
+            // lblPhieuBanHang
+            // 
+            lblPhieuBanHang.BackColor = Color.Transparent;
+            lblPhieuBanHang.Location = new Point(64, 101);
+            lblPhieuBanHang.Name = "lblPhieuBanHang";
+            lblPhieuBanHang.Size = new Size(108, 22);
+            lblPhieuBanHang.TabIndex = 8;
+            lblPhieuBanHang.Text = "Phiếu Bán Hàng";
+            // 
+            // guna2Button2
+            // 
+            guna2Button2.Animated = true;
+            guna2Button2.BackColor = Color.Transparent;
+            guna2Button2.CustomImages.HoveredImage = (Image)resources.GetObject("resource.HoveredImage12");
+            guna2Button2.CustomImages.Image = (Image)resources.GetObject("resource.Image12");
+            guna2Button2.CustomImages.ImageAlign = HorizontalAlignment.Center;
+            guna2Button2.CustomImages.ImageSize = new Size(30, 30);
+            guna2Button2.CustomizableEdges = customizableEdges33;
+            guna2Button2.DisabledState.BorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.CustomBorderColor = Color.DarkGray;
+            guna2Button2.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            guna2Button2.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            guna2Button2.FillColor = Color.Transparent;
+            guna2Button2.Font = new Font("Segoe UI", 9F);
+            guna2Button2.ForeColor = Color.White;
+            guna2Button2.Location = new Point(0, 75);
+            guna2Button2.Name = "guna2Button2";
+            guna2Button2.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            guna2Button2.Size = new Size(58, 48);
+            guna2Button2.TabIndex = 7;
+            guna2Button2.UseTransparentBackground = true;
+            // 
             // frmMainForm
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackgroundImageLayout = ImageLayout.Stretch;
             ClientSize = new Size(1924, 836);
+            Controls.Add(pnPhieuBanHang);
             Controls.Add(pnDanhMuc);
             Controls.Add(pnHeThong);
             Controls.Add(guna2Panel1);
@@ -609,6 +701,8 @@
             pnHeThong.PerformLayout();
             pnDanhMuc.ResumeLayout(false);
             pnDanhMuc.PerformLayout();
+            pnPhieuBanHang.ResumeLayout(false);
+            pnPhieuBanHang.PerformLayout();
             ResumeLayout(false);
             PerformLayout();
         }
@@ -653,5 +747,10 @@
         private Guna.UI2.WinForms.Guna2Button btnLoaiSanPham;
         private Guna.UI2.WinForms.Guna2HtmlLabel lblQuanLySanPham;
         private Guna.UI2.WinForms.Guna2Button btnSanPham;
+        private Guna.UI2.WinForms.Guna2Panel pnPhieuBanHang;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblChiTietPhieu;
+        private Guna.UI2.WinForms.Guna2Button guna2Button1;
+        private Guna.UI2.WinForms.Guna2HtmlLabel lblPhieuBanHang;
+        private Guna.UI2.WinForms.Guna2Button guna2Button2;
     }
 }
