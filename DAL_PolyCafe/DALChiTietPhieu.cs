@@ -27,6 +27,7 @@ namespace DAL_PolyCafe
 
             return $"{prefix}001";
         }
+
         public List<ChiTietPhieu> SelectBySql(string sql, List<object> args, CommandType cmdType = CommandType.Text)
         {
             List<ChiTietPhieu> list = new List<ChiTietPhieu>();
@@ -36,12 +37,12 @@ namespace DAL_PolyCafe
                 while (reader.Read())
                 {
                     ChiTietPhieu entity = new ChiTietPhieu();
-                    entity.MaChiTiet = reader.GetString(0);
-                    entity.MaPhieu = reader.GetString(1);
-                    entity.MaSanPham = reader.GetString(2);
-                    entity.TenSanPham = reader.GetString(3);
-                    entity.SoLuong = reader.GetInt32(4);
-                    entity.DonGia = reader.GetDecimal(5);
+                    entity.MaChiTiet = reader.GetString(0);   // Cột 0: MaChiTiet (string)
+                    entity.MaPhieu = reader.GetString(1);     // Cột 1: MaPhieu (string)
+                    entity.MaSanPham = reader.GetString(2);   // Cột 2: MaSanPham (string)
+                    entity.SoLuong = reader.GetInt32(3);      // Cột 3: SoLuong (int)
+                    entity.DonGia = reader.GetDecimal(4);     // Cột 4: DonGia (decimal)
+                    entity.TenSanPham = reader.GetString(5);  // Cột 5: TenSanPham (string)
                     list.Add(entity);
                 }
             }
@@ -58,7 +59,7 @@ namespace DAL_PolyCafe
                         "INNER JOIN SanPham sp ON ct.MaSanPham = sp.MaSanPham " +
                         "WHERE ct.MaPhieu = @0";
             List<object> thamSo = new List<object>();
-            thamSo.Add(maPhieu);
+            thamSo.Add(maPhieu); // Đảm bảo maPhieu là string
             return SelectBySql(sql, thamSo);
         }
 

@@ -394,6 +394,7 @@
             dgvPhieuBanHang.ThemeStyle.RowsStyle.Height = 29;
             dgvPhieuBanHang.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvPhieuBanHang.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvPhieuBanHang.CellClick += dgvPhieuBanHang_CellClick;
             dgvPhieuBanHang.CellDoubleClick += dgvPhieuBanHang_CellDoubleClick;
             // 
             // btnLamMoi
@@ -417,6 +418,7 @@
             btnLamMoi.Size = new Size(95, 67);
             btnLamMoi.TabIndex = 22;
             btnLamMoi.UseTransparentBackground = true;
+            btnLamMoi.Click += btnLamMoi_Click;
             // 
             // btnXoa
             // 
@@ -439,6 +441,7 @@
             btnXoa.Size = new Size(95, 67);
             btnXoa.TabIndex = 21;
             btnXoa.UseTransparentBackground = true;
+            btnXoa.Click += btnXoa_Click;
             // 
             // btnSua
             // 
@@ -460,6 +463,7 @@
             btnSua.ShadowDecoration.CustomizableEdges = customizableEdges20;
             btnSua.Size = new Size(95, 67);
             btnSua.TabIndex = 20;
+            btnSua.Click += btnSua_Click;
             // 
             // btnThem
             // 
@@ -483,6 +487,7 @@
             btnThem.Size = new Size(95, 67);
             btnThem.TabIndex = 19;
             btnThem.UseTransparentBackground = true;
+            btnThem.Click += btnThem_Click;
             // 
             // grpChucNang
             // 

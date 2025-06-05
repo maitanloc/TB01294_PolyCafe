@@ -36,6 +36,8 @@
             DataGridViewCellStyle dataGridViewCellStyle6 = new DataGridViewCellStyle();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges11 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges12 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges3 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             System.ComponentModel.ComponentResourceManager resources = new System.ComponentModel.ComponentResourceManager(typeof(frmChiTietPhieu));
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges4 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
@@ -57,11 +59,11 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges1 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
-            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges2 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dgvPhieuBanHang = new Guna.UI2.WinForms.Guna2DataGridView();
             dgvSanPham = new Guna.UI2.WinForms.Guna2DataGridView();
             groThongTinThanhToan = new Guna.UI2.WinForms.Guna2GroupBox();
+            txtDichVu = new Guna.UI2.WinForms.Guna2TextBox();
+            lblDichVu = new Label();
             txtThanhTien = new Guna.UI2.WinForms.Guna2TextBox();
             txtGiamGia = new Guna.UI2.WinForms.Guna2TextBox();
             txtPhanTram = new Guna.UI2.WinForms.Guna2TextBox();
@@ -81,8 +83,6 @@
             lblSoMaPhieu = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblNgayLap = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblVaoNgayLap = new Guna.UI2.WinForms.Guna2HtmlLabel();
-            lblDichVu = new Label();
-            txtDichVu = new Guna.UI2.WinForms.Guna2TextBox();
             ((System.ComponentModel.ISupportInitialize)dgvPhieuBanHang).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvSanPham).BeginInit();
             groThongTinThanhToan.SuspendLayout();
@@ -214,6 +214,42 @@
             groThongTinThanhToan.Size = new Size(870, 213);
             groThongTinThanhToan.TabIndex = 33;
             groThongTinThanhToan.Text = "Thông Tin Thanh Toán";
+            // 
+            // txtDichVu
+            // 
+            txtDichVu.Animated = true;
+            txtDichVu.AutoRoundedCorners = true;
+            txtDichVu.BackColor = Color.Transparent;
+            txtDichVu.BorderRadius = 18;
+            txtDichVu.CustomizableEdges = customizableEdges1;
+            txtDichVu.DefaultText = "";
+            txtDichVu.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
+            txtDichVu.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
+            txtDichVu.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
+            txtDichVu.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
+            txtDichVu.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtDichVu.Font = new Font("Segoe UI", 9F);
+            txtDichVu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
+            txtDichVu.Location = new Point(490, 57);
+            txtDichVu.Margin = new Padding(3, 4, 3, 4);
+            txtDichVu.Name = "txtDichVu";
+            txtDichVu.PasswordChar = '\0';
+            txtDichVu.PlaceholderText = "";
+            txtDichVu.ReadOnly = true;
+            txtDichVu.SelectedText = "";
+            txtDichVu.ShadowDecoration.CustomizableEdges = customizableEdges2;
+            txtDichVu.Size = new Size(348, 38);
+            txtDichVu.TabIndex = 8;
+            // 
+            // lblDichVu
+            // 
+            lblDichVu.AutoSize = true;
+            lblDichVu.BackColor = Color.Transparent;
+            lblDichVu.Location = new Point(414, 57);
+            lblDichVu.Name = "lblDichVu";
+            lblDichVu.Size = new Size(79, 29);
+            lblDichVu.TabIndex = 7;
+            lblDichVu.Text = "Dịch Vụ";
             // 
             // txtThanhTien
             // 
@@ -561,42 +597,6 @@
             lblVaoNgayLap.Size = new Size(85, 29);
             lblVaoNgayLap.TabIndex = 46;
             lblVaoNgayLap.Text = "Mã Phiếu";
-            // 
-            // lblDichVu
-            // 
-            lblDichVu.AutoSize = true;
-            lblDichVu.BackColor = Color.Transparent;
-            lblDichVu.Location = new Point(414, 57);
-            lblDichVu.Name = "lblDichVu";
-            lblDichVu.Size = new Size(79, 29);
-            lblDichVu.TabIndex = 7;
-            lblDichVu.Text = "Dịch Vụ";
-            // 
-            // txtDichVu
-            // 
-            txtDichVu.Animated = true;
-            txtDichVu.AutoRoundedCorners = true;
-            txtDichVu.BackColor = Color.Transparent;
-            txtDichVu.BorderRadius = 18;
-            txtDichVu.CustomizableEdges = customizableEdges1;
-            txtDichVu.DefaultText = "";
-            txtDichVu.DisabledState.BorderColor = Color.FromArgb(208, 208, 208);
-            txtDichVu.DisabledState.FillColor = Color.FromArgb(226, 226, 226);
-            txtDichVu.DisabledState.ForeColor = Color.FromArgb(138, 138, 138);
-            txtDichVu.DisabledState.PlaceholderForeColor = Color.FromArgb(138, 138, 138);
-            txtDichVu.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDichVu.Font = new Font("Segoe UI", 9F);
-            txtDichVu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtDichVu.Location = new Point(490, 57);
-            txtDichVu.Margin = new Padding(3, 4, 3, 4);
-            txtDichVu.Name = "txtDichVu";
-            txtDichVu.PasswordChar = '\0';
-            txtDichVu.PlaceholderText = "";
-            txtDichVu.ReadOnly = true;
-            txtDichVu.SelectedText = "";
-            txtDichVu.ShadowDecoration.CustomizableEdges = customizableEdges2;
-            txtDichVu.Size = new Size(348, 38);
-            txtDichVu.TabIndex = 8;
             // 
             // frmChiTietPhieu
             // 

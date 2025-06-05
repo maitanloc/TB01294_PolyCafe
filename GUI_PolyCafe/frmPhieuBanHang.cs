@@ -10,6 +10,7 @@ using System.Windows.Forms;
 using BLL_PolyCafe;
 using DTO_PolyCafe;
 using UTIL_PolyCafe;
+using static System.Windows.Forms.VisualStyles.VisualStyleElement.TextBox;
 
 namespace GUI_PolyCafe
 {
@@ -85,11 +86,11 @@ namespace GUI_PolyCafe
             buttonColumn.HeaderText = "Thanh Toán";
             //buttonColumn.Text = "Thanh Toán";
             //buttonColumn.UseColumnTextForButtonValue = true; // Hiển thị văn bản lên nút
-            buttonColumn.Image = Properties.Resources.pay;
+            buttonColumn.Image = Properties.Resources.shopping_cart;
             buttonColumn.DefaultCellStyle.BackColor = Color.LightBlue;
             buttonColumn.DefaultCellStyle.ForeColor = Color.DarkBlue;
 
-            buttonColumn.DefaultCellStyle.Font = new Font("Arial", 10, FontStyle.Bold);
+            buttonColumn.DefaultCellStyle.Font = new Font("Arial", 1, FontStyle.Bold);
 
             if (!dgvPhieuBanHang.Columns.Contains("ThanhToan"))
             {
@@ -119,7 +120,10 @@ namespace GUI_PolyCafe
 
         private void frmPhieuBanHang_Load(object sender, EventArgs e)
         {
-
+            ClearForm("");
+            LoadTheLuuDong();
+            LoadNhanVien();
+            LoadDanhSachPhieu("");
         }
 
         private void dgvPhieuBanHang_CellDoubleClick(object sender, DataGridViewCellEventArgs e)
@@ -149,6 +153,204 @@ namespace GUI_PolyCafe
             }
             frmChiTietPhieu frmChiTiet = new frmChiTietPhieu(the, phieu, nv);
             frmChiTiet.ShowDialog();
+        }
+
+        private void btnThem_Click(object sender, EventArgs e)
+        {
+            string maThe = cboMaThe.SelectedValue?.ToString();
+            string maNhanVien = cboNhanVien.SelectedValue?.ToString();
+            DateTime ngayTao = dtpNgayTao.Value;
+
+            bool trangThai;
+            if (rdbChoXacNhan.Checked)
+            {
+                trangThai = false;
+            }
+            else
+            {
+                trangThai = true;
+            }
+            if (string.IsNullOrEmpty(maNhanVien) || string.IsNullOrEmpty(maThe))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin phiếu bán hàng.");
+                return;
+            }
+
+            PhieuBanHang theLuuDong = new PhieuBanHang
+            {
+                MaThe = maThe,
+                MaNhanVien = maNhanVien,
+                NgayTao = ngayTao,
+                TrangThai = trangThai
+            };
+            BUSPhieuBanHang bus = new BUSPhieuBanHang();
+            string result = bus.InsertPhieuBanHang(theLuuDong);
+
+            if (string.IsNullOrEmpty(result))
+            {
+                MessageBox.Show("Cập nhật thông tin thành công");
+                ClearForm(maThe);
+                LoadTheLuuDong();
+                LoadNhanVien();
+                LoadDanhSachPhieu("");
+                cboMaThe.SelectedValue = maThe;
+            }
+            else
+            {
+                MessageBox.Show(result);
+            }
+        }
+
+        private void btnSua_Click(object sender, EventArgs e)
+        {
+            string maThe = cboMaThe.SelectedValue?.ToString();
+            string maPhieu = txtMaPhieu.Text;
+            string maNhanVien = cboNhanVien.SelectedValue?.ToString();
+            DateTime ngayTao = dtpNgayTao.Value;
+
+            bool trangThai;
+            if (rdbChoXacNhan.Checked)
+            {
+                trangThai = false;
+            }
+            else
+
+
+            {
+                trangThai = true;
+            }
+            if (string.IsNullOrEmpty(maNhanVien) || string.IsNullOrEmpty(maThe))
+            {
+                MessageBox.Show("Vui lòng điền đầy đủ thông tin phiếu bán hàng.");
+                return;
+            }
+
+            PhieuBanHang theLuuDong = new PhieuBanHang
+            {
+                MaPhieu = maPhieu,
+                MaThe = maThe,
+                MaNhanVien = maNhanVien,
+                NgayTao = ngayTao,
+                TrangThai = trangThai
+            };
+            BUSPhieuBanHang bus = new BUSPhieuBanHang();
+            string result = bus.UpdatePhieuBanHang(theLuuDong);
+
+            if (string.IsNullOrEmpty(result))
+            {
+                MessageBox.Show("Cập nhật thông tin thành công");
+                ClearForm(maThe);
+                LoadTheLuuDong();
+                LoadNhanVien();
+                LoadDanhSachPhieu("");
+                cboMaThe.SelectedValue = maThe;
+            }
+            else
+            {
+                MessageBox.Show(result);
+            }
+
+        }
+
+        private void btnXoa_Click(object sender, EventArgs e)
+        {
+            string maPhieu = txtMaPhieu.Text.Trim();
+            string maThe = cboMaThe.SelectedValue?.ToString();
+            string chuSoHuu = cboMaThe.Text;
+            if (string.IsNullOrEmpty(maPhieu))
+            {
+                if (dgvPhieuBanHang.SelectedRows.Count > 0)
+                {
+                    DataGridViewRow selectedRow = dgvPhieuBanHang.SelectedRows[0];
+                    maPhieu = selectedRow.Cells["MaPhieu"].Value.ToString();
+                    maThe = selectedRow.Cells["MaThe"].Value.ToString();
+                    chuSoHuu = selectedRow.Cells["ChuSoHuu"].Value.ToString();
+                }
+                else
+                {
+                    MessageBox.Show("Vui lòng chọn thông tin phiếu bán hàng cần xóa xóa!", "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                    return;
+                }
+            }
+
+            if (string.IsNullOrEmpty(maPhieu))
+            {
+                MessageBox.Show("Xóa không thành công.");
+                return;
+            }
+
+            DialogResult result = MessageBox.Show($"Bạn có chắc chắn muốn xóa phiếu bán hàng {maPhieu} - {chuSoHuu}?", "Xác nhận xóa",
+                MessageBoxButtons.YesNo, MessageBoxIcon.Warning);
+
+            if (result == DialogResult.Yes)
+            {
+                BUSPhieuBanHang bus = new BUSPhieuBanHang();
+                string kq = bus.DeletePhieuBanHang(maPhieu);
+
+                if (string.IsNullOrEmpty(kq))
+                {
+                    MessageBox.Show($"Xóa thông tin phiếu bán hàng {maPhieu} - {chuSoHuu} thành công!", "Thông báo",
+                        MessageBoxButtons.OK, MessageBoxIcon.Information);
+                    ClearForm(maThe);
+                    LoadTheLuuDong();
+                    LoadNhanVien();
+                    LoadDanhSachPhieu("");
+
+                    cboMaThe.SelectedValue = maThe;
+                }
+                else
+                {
+                    MessageBox.Show(kq, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
+                }
+
+            }
+
+        }
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            ClearForm("");
+            LoadTheLuuDong();
+            LoadNhanVien();
+            LoadDanhSachPhieu("");
+        }
+
+        private void dgvPhieuBanHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            isLoadingTheLuuDongData = true;
+            DataGridViewRow row = dgvPhieuBanHang.Rows[e.RowIndex];
+            cboMaThe.SelectedValue = row.Cells["MaThe"].Value.ToString();
+            cboNhanVien.SelectedValue = row.Cells["MaNhanVien"].Value.ToString();
+            dtpNgayTao.Text = row.Cells["NgayTao"].Value.ToString();
+            txtMaPhieu.Text = row.Cells["MaPhieu"].Value.ToString();
+
+            bool trangThai = Convert.ToBoolean(row.Cells["TrangThai"].Value);
+            if (trangThai)
+            {
+                rdbDaThanhToan.Checked = true;
+                rdbDaThanhToan.Enabled = false;
+                rdbChoXacNhan.Enabled = false;
+                cboNhanVien.Enabled = false;
+                dtpNgayTao.Enabled = false;
+                btnThem.Enabled = false;
+                btnSua.Enabled = false;
+                btnXoa.Enabled = false;
+
+            }
+            else
+            {
+                rdbDaThanhToan.Checked = false;
+                rdbDaThanhToan.Enabled = true;
+                rdbChoXacNhan.Enabled = true;
+                cboNhanVien.Enabled = true;
+                rdbChoXacNhan.Checked = true;
+                rdbChoXacNhan.Enabled = true;
+                dtpNgayTao.Enabled = true;
+                // Bật nút "Sửa"
+                btnThem.Enabled = false;
+                btnSua.Enabled = true;
+                btnXoa.Enabled = true;
+            }
         }
     }
 }

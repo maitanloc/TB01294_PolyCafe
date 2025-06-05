@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using DTO_PolyCafe;
 using UTIL_PolyCafe;
 
 namespace GUI_PolyCafe
@@ -125,6 +126,7 @@ namespace GUI_PolyCafe
         {
             openChildForm(new frmTheLuuDong());
             frmTheLuuDong frmTheLuuDong = new frmTheLuuDong();
+            pnPhieuBanHang.Visible = !pnPhieuBanHang.Visible;
         }
 
         private void btnNhanVien_Click(object sender, EventArgs e)
@@ -158,6 +160,23 @@ namespace GUI_PolyCafe
             openChildForm(new frmQuanLyLoaiSanPham());
             frmQuanLyLoaiSanPham frmquanlyloaisanpham = new frmQuanLyLoaiSanPham();
 
+        }
+
+        private void guna2Button2_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmPhieuBanHang());
+            frmPhieuBanHang frmPhieuBanHang = new frmPhieuBanHang();
+        }
+
+        private void guna2Button1_Click(object sender, EventArgs e)
+        {
+            // Replace these with actual objects or variables from your form
+            TheLuuDong the = new TheLuuDong(); // You need to get the correct TheLuuDong object
+            PhieuBanHang phieu = new PhieuBanHang(); // You need to get the correct PhieuBanHang object
+            NhanVien nv = new NhanVien(); // You need to get the correct NhanVien object
+
+            // Pass the required parameters to frmChiTietPhieu
+            openChildForm(new frmChiTietPhieu(the, phieu, nv));
         }
     }
 }

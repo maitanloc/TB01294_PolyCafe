@@ -21,15 +21,15 @@ namespace GUI_PolyCafe
         private List<ChiTietPhieu> lstChiTiet;
         private List<SanPham> lstSanPham;
         bool isActive = true;
-        public frmChiTietPhieu()
+        public frmChiTietPhieu(TheLuuDong the, PhieuBanHang phieu, NhanVien nv)
         {
             InitializeComponent();
-            theLuuDong = theLuuDong;
-            phieuBanHang = phieuBanHang;
-            nhanVien = nhanVien;
+            theLuuDong = the;
+            phieuBanHang = phieu;
+            nhanVien = nv;
             lstChiTiet = new List<ChiTietPhieu>();
             lstSanPham = new List<SanPham>();
-            isActive = phieuBanHang.TrangThai;
+            isActive = phieu.TrangThai;
         }
         private void activeTranfer()
         {
