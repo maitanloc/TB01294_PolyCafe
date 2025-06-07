@@ -352,5 +352,12 @@ namespace GUI_PolyCafe
                 btnXoa.Enabled = true;
             }
         }
+        private BUSPhieuBanHang busPhieu = new BUSPhieuBanHang();
+        private void btnTimKiem_Click(object sender, EventArgs e)
+        {
+            string kw = txtTimKiem.Text.Trim();
+            var ketQua = busPhieu.SearchPhieuBanHang(kw);
+            dgvPhieuBanHang.DataSource = ketQua;
+        }
     }
 }

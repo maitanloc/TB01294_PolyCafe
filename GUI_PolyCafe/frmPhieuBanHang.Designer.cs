@@ -534,6 +534,7 @@
             btnTimKiem.Text = "Tìm Kiếm";
             btnTimKiem.TextAlign = HorizontalAlignment.Right;
             btnTimKiem.UseTransparentBackground = true;
+            btnTimKiem.Click += btnTimKiem_Click;
             // 
             // txtTimKiem
             // 

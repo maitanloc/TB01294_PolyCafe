@@ -59,6 +59,8 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges23 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges24 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges25 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dgvPhieuBanHang = new Guna.UI2.WinForms.Guna2DataGridView();
             dgvSanPham = new Guna.UI2.WinForms.Guna2DataGridView();
             groThongTinThanhToan = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -83,6 +85,7 @@
             lblSoMaPhieu = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblNgayLap = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblVaoNgayLap = new Guna.UI2.WinForms.Guna2HtmlLabel();
+            btnLamMoi = new Guna.UI2.WinForms.Guna2Button();
             ((System.ComponentModel.ISupportInitialize)dgvPhieuBanHang).BeginInit();
             ((System.ComponentModel.ISupportInitialize)dgvSanPham).BeginInit();
             groThongTinThanhToan.SuspendLayout();
@@ -138,6 +141,7 @@
             dgvPhieuBanHang.ThemeStyle.RowsStyle.Height = 29;
             dgvPhieuBanHang.ThemeStyle.RowsStyle.SelectionBackColor = Color.FromArgb(231, 229, 255);
             dgvPhieuBanHang.ThemeStyle.RowsStyle.SelectionForeColor = Color.FromArgb(71, 69, 94);
+            dgvPhieuBanHang.CellClick += dgvPhieuBanHang_CellClick;
             dgvPhieuBanHang.CellContentClick += dgvPhieuBanHang_CellContentClick;
             dgvPhieuBanHang.CellEndEdit += dgvPhieuBanHang_CellEndEdit;
             // 
@@ -407,7 +411,7 @@
             btnTimKiemChiTietPhieu.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnTimKiemChiTietPhieu.ForeColor = Color.Black;
             btnTimKiemChiTietPhieu.ImageAlign = HorizontalAlignment.Left;
-            btnTimKiemChiTietPhieu.Location = new Point(689, 108);
+            btnTimKiemChiTietPhieu.Location = new Point(622, 107);
             btnTimKiemChiTietPhieu.Name = "btnTimKiemChiTietPhieu";
             btnTimKiemChiTietPhieu.ShadowDecoration.CustomizableEdges = customizableEdges14;
             btnTimKiemChiTietPhieu.Size = new Size(187, 37);
@@ -415,6 +419,7 @@
             btnTimKiemChiTietPhieu.Text = "Tìm Kiếm";
             btnTimKiemChiTietPhieu.TextAlign = HorizontalAlignment.Right;
             btnTimKiemChiTietPhieu.UseTransparentBackground = true;
+            btnTimKiemChiTietPhieu.Click += btnTimKiemChiTietPhieu_Click;
             // 
             // txtTimKiemChiTietPhieu
             // 
@@ -437,7 +442,7 @@
             txtTimKiemChiTietPhieu.PlaceholderText = "";
             txtTimKiemChiTietPhieu.SelectedText = "";
             txtTimKiemChiTietPhieu.ShadowDecoration.CustomizableEdges = customizableEdges16;
-            txtTimKiemChiTietPhieu.Size = new Size(416, 38);
+            txtTimKiemChiTietPhieu.Size = new Size(349, 38);
             txtTimKiemChiTietPhieu.TabIndex = 35;
             // 
             // btnTimKiemSanPham
@@ -467,6 +472,7 @@
             btnTimKiemSanPham.Text = "Tìm Kiếm";
             btnTimKiemSanPham.TextAlign = HorizontalAlignment.Right;
             btnTimKiemSanPham.UseTransparentBackground = true;
+            btnTimKiemSanPham.Click += btnTimKiemSanPham_Click;
             // 
             // txtTimKiemSanPham
             // 
@@ -598,11 +604,35 @@
             lblVaoNgayLap.TabIndex = 46;
             lblVaoNgayLap.Text = "Mã Phiếu";
             // 
+            // btnLamMoi
+            // 
+            btnLamMoi.BackColor = Color.Transparent;
+            btnLamMoi.CustomImages.HoveredImage = (Image)resources.GetObject("resource.HoveredImage4");
+            btnLamMoi.CustomImages.Image = (Image)resources.GetObject("resource.Image4");
+            btnLamMoi.CustomImages.ImageAlign = HorizontalAlignment.Center;
+            btnLamMoi.CustomImages.ImageSize = new Size(40, 40);
+            btnLamMoi.CustomizableEdges = customizableEdges25;
+            btnLamMoi.DisabledState.BorderColor = Color.DarkGray;
+            btnLamMoi.DisabledState.CustomBorderColor = Color.DarkGray;
+            btnLamMoi.DisabledState.FillColor = Color.FromArgb(169, 169, 169);
+            btnLamMoi.DisabledState.ForeColor = Color.FromArgb(141, 141, 141);
+            btnLamMoi.FillColor = Color.Transparent;
+            btnLamMoi.Font = new Font("Segoe UI", 9F);
+            btnLamMoi.ForeColor = Color.White;
+            btnLamMoi.Location = new Point(787, 88);
+            btnLamMoi.Name = "btnLamMoi";
+            btnLamMoi.ShadowDecoration.CustomizableEdges = customizableEdges26;
+            btnLamMoi.Size = new Size(95, 67);
+            btnLamMoi.TabIndex = 47;
+            btnLamMoi.UseTransparentBackground = true;
+            btnLamMoi.Click += btnLamMoi_Click;
+            // 
             // frmChiTietPhieu
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(1460, 726);
+            Controls.Add(btnLamMoi);
             Controls.Add(lblVaoNgayLap);
             Controls.Add(lblNgayLap);
             Controls.Add(lblSoMaPhieu);
@@ -654,5 +684,6 @@
         private Guna.UI2.WinForms.Guna2HtmlLabel lblVaoNgayLap;
         private Guna.UI2.WinForms.Guna2TextBox txtDichVu;
         private Label lblDichVu;
+        private Guna.UI2.WinForms.Guna2Button btnLamMoi;
     }
 }

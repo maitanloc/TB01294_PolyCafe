@@ -33,13 +33,20 @@ namespace GUI_PolyCafe
         }
         private void activeTranfer()
         {
-            if (isActive)
+            if (!isActive)    // đảo điều kiện
             {
                 btnThemChiTiet.Enabled = false;
                 btnXoaChiTiet.Enabled = false;
                 txtPhanTram.Enabled = false;
             }
+            else
+            {
+                txtPhanTram.Enabled = true;
+                btnThemChiTiet.Enabled = true;
+                btnXoaChiTiet.Enabled = true;
+            }
         }
+
         private void LoadInfo()
         {
             lblTenChuSoHuu.Text = $"{theLuuDong.MaThe} - {theLuuDong.ChuSoHuu}";
@@ -60,6 +67,31 @@ namespace GUI_PolyCafe
             loadSanPham();
             loadChiTietPhieu(phieuBanHang.MaPhieu);
             activeTranfer();
+            txtPhanTram.TextChanged += RecalculateDiscountAndTotal;
+            txtDichVu.TextChanged += RecalculateDiscountAndTotal;
+        }
+        // 2. Hàm tính lại
+        private void RecalculateDiscountAndTotal(object sender, EventArgs e)
+        {
+            // Lấy tổng tiền đã có (giả sử đã lưu vào biến hoặc txtTong)
+            if (!decimal.TryParse(txtTong.Text, out decimal total))
+                return;
+
+            // Đọc giá trị dịch vụ
+            decimal dichVu = 0;
+            decimal.TryParse(txtDichVu.Text, out dichVu);
+
+            // Đọc phần trăm giảm giá
+            decimal phanTram = 0;
+            decimal.TryParse(txtPhanTram.Text, out phanTram);
+
+            // Tính tiền giảm
+            decimal giamGia = total * phanTram / 100;
+            txtGiamGia.Text = giamGia.ToString("N0");
+
+            // Tính thành tiền: tổng + dịch vụ – giảm giá
+            decimal thanhTien = total + dichVu - giamGia;
+            txtThanhTien.Text = thanhTien.ToString("N0");
         }
         private void loadSanPham()
         {
@@ -253,5 +285,99 @@ namespace GUI_PolyCafe
             txtDichVu.Text = "0";
         }
 
+        // 1) Khai báo biến BUSChiTietPhieu ở cấp class của Form
+        BUSChiTietPhieu busChiTiet = new BUSChiTietPhieu();
+
+        private void dgvPhieuBanHang_CellClick(object sender, DataGridViewCellEventArgs e)
+        {
+            if (e.RowIndex < 0) return;
+            var row = dgvPhieuBanHang.Rows[e.RowIndex];
+
+            // 2) Lấy mã phiếu từ DataGridView
+            //    Giả sử cột MaPhieu có Name = "MaPhieu"
+            string maPhieu = row.Cells["MaPhieu"].Value?.ToString() ?? "";
+            if (string.IsNullOrEmpty(maPhieu))
+            {
+                MessageBox.Show("Mã phiếu không hợp lệ.");
+                return;
+            }
+
+            // 3) Gọi BLL để lấy tổng tiền
+            string tongTienStr = busChiTiet.CalculateTongTien(maPhieu);
+            // Nếu BUS trả về chuỗi lỗi, sẽ có chữ "Lỗi:" ở đầu
+            if (tongTienStr.StartsWith("Lỗi:"))
+            {
+                MessageBox.Show(tongTienStr);
+                return;
+            }
+
+            // 4) Chuyển về decimal và hiển thị
+            if (!decimal.TryParse(tongTienStr, out decimal total))
+            {
+                MessageBox.Show("Dữ liệu tổng tiền không hợp lệ.");
+                return;
+            }
+            txtTong.Text = total.ToString("N0");
+
+            // 5) Tính các phần còn lại như trước
+            decimal dichVu = 0, phanTram = 0;
+            decimal.TryParse(txtDichVu.Text, out dichVu);
+            decimal.TryParse(txtPhanTram.Text, out phanTram);
+
+            decimal giamGia = total * phanTram / 100;
+            decimal thanhTien = total + dichVu - giamGia;
+
+            txtGiamGia.Text = giamGia.ToString("N0");
+            txtThanhTien.Text = thanhTien.ToString("N0");
+        }
+
+        private void btnTimKiemChiTietPhieu_Click(object sender, EventArgs e)
+        {
+            string kw = txtTimKiemChiTietPhieu.Text.Trim();
+            // Nếu trống, load lại toàn bộ
+            if (string.IsNullOrEmpty(kw))
+                loadChiTietPhieu(phieuBanHang.MaPhieu);
+            else
+            {
+                var ketQua = busChiTiet.SearchChiTietBySanPham(
+                    phieuBanHang.MaPhieu, kw);
+                dgvPhieuBanHang.DataSource = ketQua;
+            }
+        }
+
+        private void btnTimKiemSanPham_Click(object sender, EventArgs e)
+        {
+            string kw = txtTimKiemSanPham.Text.Trim();
+            // Nếu trống, load lại toàn bộ
+            if (string.IsNullOrEmpty(kw))
+                loadSanPham();
+            else
+            {
+                var ketQua = busChiTiet.SearchSanPham(kw);
+                dgvSanPham.DataSource = ketQua;
+            }
+        }
+
+
+        private void btnLamMoi_Click(object sender, EventArgs e)
+        {
+            // 1. Xóa các ô tìm kiếm
+            txtTimKiemChiTietPhieu.Text = string.Empty;
+            txtTimKiemSanPham.Text = string.Empty;
+
+            // 2. Load lại dữ liệu gốc
+            loadChiTietPhieu(phieuBanHang.MaPhieu);
+            loadSanPham();
+
+            // 3. Reset phần thanh toán về 0
+            loadThanhToan();
+
+            // 4. (Tuỳ chọn) Bỏ chọn dòng hiện tại trong DataGridView
+            if (dgvPhieuBanHang.CurrentRow != null)
+                dgvPhieuBanHang.ClearSelection();
+            if (dgvSanPham.CurrentRow != null)
+                dgvSanPham.ClearSelection();
+
+        }
     }
 }

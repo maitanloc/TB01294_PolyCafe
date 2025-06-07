@@ -71,5 +71,13 @@ namespace BLL_PolyCafe
                 return "Lỗi: " + ex.Message;
             }
         }
+        public List<PhieuBanHang> SearchPhieuBanHang(string keyword)
+        {
+            return dalPhieuBanHang.SearchPhieuBanHang(keyword);
+        }
+        public List<PhieuBanHang> SearchPhieuBanHangByDate(DateTime? fromDate, DateTime? toDate)
+        {
+            return dalPhieuBanHang.SearchPhieuBanHangByDate(fromDate, toDate);
+        }
     }
 }

@@ -127,6 +127,65 @@ namespace DAL_PolyCafe
 
             return SelectBySql(sql, param);
         }
+        public List<PhieuBanHang> SearchPhieuBanHang(string keyword)
+        {
+            // Nếu không truyền keyword hoặc chỉ toàn khoảng trắng, trả về tất cả
+            if (string.IsNullOrWhiteSpace(keyword))
+            {
+                return selectAll(null);
+            }
+
+            // Chuẩn bị wildcard
+            string pattern = $"%{keyword.Trim()}%";
+
+            // SQL: nối bảng TheLuuDong và NhanVien để lấy đầy đủ thông tin
+            string sql = @"
+            SELECT phieu.MaPhieu,
+                   phieu.MaThe,
+                   the.ChuSoHuu,
+                   phieu.MaNhanVien,
+                   nv.HoTen,
+                   phieu.NgayTao,
+                   phieu.TrangThai
+            FROM PhieuBanHang phieu
+            INNER JOIN TheLuuDong the ON the.MaThe = phieu.MaThe
+            INNER JOIN NhanVien    nv  ON nv.MaNhanVien = phieu.MaNhanVien
+            WHERE phieu.MaPhieu LIKE @0
+               OR the.ChuSoHuu  LIKE @0
+               OR nv.HoTen      LIKE @0";
+
+            var param = new List<object> { pattern };
+            return SelectBySql(sql, param);
+        }
+        public List<PhieuBanHang> SearchPhieuBanHangByDate(DateTime? fromDate, DateTime? toDate)
+        {
+            var sqlBuilder = new StringBuilder(@"
+            SELECT phieu.MaPhieu,
+                   phieu.MaThe,
+                   the.ChuSoHuu,
+                   phieu.MaNhanVien,
+                   nv.HoTen,
+                   phieu.NgayTao,
+                   phieu.TrangThai
+            FROM PhieuBanHang phieu
+            INNER JOIN TheLuuDong the ON the.MaThe = phieu.MaThe
+            INNER JOIN NhanVien    nv  ON nv.MaNhanVien = phieu.MaNhanVien
+            WHERE 1=1");
+            var param = new List<object>();
+
+            if (fromDate.HasValue)
+            {
+                sqlBuilder.Append(" AND phieu.NgayTao >= @").Append(param.Count);
+                param.Add(fromDate.Value.Date);
+            }
+            if (toDate.HasValue)
+            {
+                sqlBuilder.Append(" AND phieu.NgayTao <= @").Append(param.Count);
+                param.Add(toDate.Value.Date);
+            }
+
+            return SelectBySql(sqlBuilder.ToString(), param);
+        }
 
 
     }
