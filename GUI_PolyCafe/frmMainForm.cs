@@ -124,8 +124,7 @@ namespace GUI_PolyCafe
 
         private void btnBanHang_Click(object sender, EventArgs e)
         {
-            openChildForm(new frmTheLuuDong());
-            frmTheLuuDong frmTheLuuDong = new frmTheLuuDong();
+
             pnPhieuBanHang.Visible = !pnPhieuBanHang.Visible;
         }
 
@@ -177,6 +176,36 @@ namespace GUI_PolyCafe
 
             // Pass the required parameters to frmChiTietPhieu
             openChildForm(new frmChiTietPhieu(the, phieu, nv));
+        }
+
+        private void pnPhieuBanHang_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
+
+        private void btnTheLuuDong_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmTheLuuDong());
+            frmTheLuuDong frmTheLuuDong = new frmTheLuuDong();
+
+        }
+
+        private void btnDoanhThu_Click(object sender, EventArgs e)
+        {
+            pnThongKe.Visible = !pnThongKe.Visible;
+        }
+
+        private void btnThongKeNhanVien_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmThongKeNhanVien());
+            frmThongKeNhanVien frmThongKeNhanVien = new frmThongKeNhanVien();
+
+        }
+
+        private void btnThongKeSP_Click(object sender, EventArgs e)
+        {
+            openChildForm(new frmThongKeLoaiSP());
+            frmThongKeLoaiSP frmThongKeLoaiSP = new frmThongKeLoaiSP();
         }
     }
 }
