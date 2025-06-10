@@ -29,15 +29,15 @@ namespace GUI_PolyCafe
             nhanVien = nv;
             lstChiTiet = new List<ChiTietPhieu>();
             lstSanPham = new List<SanPham>();
-            isActive = phieu.TrangThai;
+            isActive = phieu.TrangThai.Equals("Chờ xác nhận") || phieu.TrangThai.Equals("Đã thanh toán");
         }
         private void activeTranfer()
         {
             if (!isActive)    // đảo điều kiện
             {
-                btnThemChiTiet.Enabled = false;
-                btnXoaChiTiet.Enabled = false;
-                txtPhanTram.Enabled = false;
+                btnThemChiTiet.Enabled = true;
+                btnXoaChiTiet.Enabled = true;
+                txtPhanTram.Enabled = true;
             }
             else
             {

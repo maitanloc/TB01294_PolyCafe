@@ -222,5 +222,10 @@ namespace GUI_PolyCafe
         {
             tim_kiem();
         }
+
+        private void guna2CustomGradientPanel1_Paint(object sender, PaintEventArgs e)
+        {
+
+        }
     }
 }

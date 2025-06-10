@@ -207,5 +207,23 @@ namespace GUI_PolyCafe
             openChildForm(new frmThongKeLoaiSP());
             frmThongKeLoaiSP frmThongKeLoaiSP = new frmThongKeLoaiSP();
         }
+
+        private void btnDangXuat_Click(object sender, EventArgs e)
+        {
+
+            AuthUtil.Logout();
+            this.Close(); // Đóng form hiện tại
+            Application.Restart(); // Khởi động lại ứng dụng
+        }
+
+        private void btnThoat_Click(object sender, EventArgs e)
+        {
+
+            DialogResult result = MessageBox.Show("Bạn có chắc chắn muốn thoát không?", "Xác nhận thoát", MessageBoxButtons.YesNo, MessageBoxIcon.Question);
+            if (result == DialogResult.Yes)
+            {
+                Application.Exit(); // Thoát ứng dụng 
+            }
+        }
     }
 }

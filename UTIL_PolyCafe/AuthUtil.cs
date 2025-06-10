@@ -23,5 +23,10 @@ namespace UTIL_PolyCafe
             }
             return true;
         }
+        // log out
+        public static void Logout()
+        {
+            user = null;
+        }
     }
 }
