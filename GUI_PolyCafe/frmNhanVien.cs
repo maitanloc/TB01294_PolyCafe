@@ -23,8 +23,9 @@ namespace GUI_PolyCafe
         {
             ConfigureDataGridViewColumns();
             loadDanhSachNhanVien();
-            dgvNhanVien.CellFormatting += new DataGridViewCellFormattingEventHandler(dgvNhanVien_CellFormatting);
-            dgvNhanVien.CellEndEdit += new DataGridViewCellEventHandler(dgvNhanVien_CellEndEdit);
+
+            dgvNhanVien.CellFormatting += dgvNhanVien_CellFormatting_1;
+            dgvNhanVien.CellEndEdit += dgvNhanVien_CellEndEdit_1;
         }
 
         private void ConfigureDataGridViewColumns()
@@ -95,7 +96,66 @@ namespace GUI_PolyCafe
             dgvNhanVien.DataSource = busNhanVien.GetNhanVienlist();
         }
 
-        private void btnThemNhanVien_Click(object sender, EventArgs e)
+
+
+        private void ClearForm()
+        {
+            txtMaNV.Enabled = true;
+            btnNutThem.Enabled = true;
+            btnNutSua.Enabled = false;
+            btnNutXoa.Enabled = false;
+            txtMaNV.Clear();
+            txtHoTen.Clear();
+            txtMatKhau.Clear();
+            txtEmail.Clear();
+            rdoNhanVien.Checked = true;
+            rdbDangHoatDong.Checked = true;
+        }
+
+
+
+        private void txtMaNV_TextChanged(object sender, EventArgs e)
+        {
+            txtMaNV.Enabled = false;
+        }
+
+
+
+        private void txtTimKemNhanVien_TextChanged(object sender, EventArgs e)
+        {
+        }
+
+        private void TimKiemNhanVien()
+        {
+            string searchValue = txtTimKiemNhanVien.Text.Trim();
+            if (string.IsNullOrEmpty(searchValue))
+            {
+                loadDanhSachNhanVien();
+                return;
+            }
+            BUSNhanVien busNhanVien = new BUSNhanVien();
+            List<NhanVien> list = busNhanVien.GetNhanVienlist();
+            var result = list.Where(nv => nv.HoTen.Contains(searchValue)).ToList();
+            dgvNhanVien.DataSource = result;
+        }
+
+
+
+
+
+
+
+
+
+
+
+        private void guna2vTrackBar1_Scroll(object sender, ScrollEventArgs e)
+        {
+
+
+        }
+
+        private void btnNutThem_Click(object sender, EventArgs e)
         {
             try
             {
@@ -132,92 +192,10 @@ namespace GUI_PolyCafe
             {
                 MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
-        private void ClearForm()
-        {
-            txtMaNV.Enabled = true;
-            btnThemNhanVien.Enabled = true;
-            btnSuaNhanVien.Enabled = false;
-            btnXoaNhanVien.Enabled = false;
-            txtMaNV.Clear();
-            txtHoTen.Clear();
-            txtMatKhau.Clear();
-            txtEmail.Clear();
-            rdoNhanVien.Checked = true;
-        }
-
-        private void btnLamMoiNhanVien_Click(object sender, EventArgs e)
-        {
-            ClearForm();
-            loadDanhSachNhanVien();
-        }
-
-        private void txtMaNV_TextChanged(object sender, EventArgs e)
-        {
-            txtMaNV.Enabled = false;
-        }
-
-        private void dgvNhanVien_CellClick(object sender, DataGridViewCellEventArgs e)
-        {
-            if (e.RowIndex >= 0)
-            {
-                DataGridViewRow row = dgvNhanVien.Rows[e.RowIndex];
-                txtMaNV.Text = row.Cells["MaNhanVien"].Value.ToString();
-                txtHoTen.Text = row.Cells["HoTen"].Value.ToString();
-                txtEmail.Text = row.Cells["Email"].Value.ToString();
-                txtMatKhau.Text = row.Cells["MatKhau"].Value.ToString();
-
-                NhanVien nv = (NhanVien)row.DataBoundItem;
-                if (nv.VaiTro)
-                {
-                    rdoNhanVien.Checked = true;
-                }
-                else
-                {
-                    rdoQuanLy.Checked = true;
-                }
-
-                if (nv.TrangThai)
-                {
-                    rdoDangHoatDong.Checked = true;
-                }
-                else
-                {
-                    rdoTamNgung.Checked = true;
-                }
-
-                txtMaNV.Enabled = false;
-                btnThemNhanVien.Enabled = false;
-                btnSuaNhanVien.Enabled = true;
-                btnXoaNhanVien.Enabled = true;
-            }
-        }
-
-        private void txtTimKemNhanVien_TextChanged(object sender, EventArgs e)
-        {
-        }
-
-        private void TimKiemNhanVien()
-        {
-            string searchValue = txtTimKemNhanVien.Text.Trim();
-            if (string.IsNullOrEmpty(searchValue))
-            {
-                loadDanhSachNhanVien();
-                return;
-            }
-            BUSNhanVien busNhanVien = new BUSNhanVien();
-            List<NhanVien> list = busNhanVien.GetNhanVienlist();
-            var result = list.Where(nv => nv.HoTen.Contains(searchValue)).ToList();
-            dgvNhanVien.DataSource = result;
-        }
-
-        private void btnTimKiemNhanVien_Click(object sender, EventArgs e)
-        {
-            TimKiemNhanVien();
-        }
-
-        private void btnSuaNhanVien_Click(object sender, EventArgs e)
+        private void btnNutSua_Click(object sender, EventArgs e)
         {
             try
             {
@@ -226,7 +204,7 @@ namespace GUI_PolyCafe
                 string email = txtEmail.Text.Trim();
                 string matkhau = txtMatKhau.Text.Trim();
                 bool vaiTro = rdoNhanVien.Checked;
-                bool trangThai = rdoDangHoatDong.Checked;
+                bool trangThai = rdbDangHoatDong.Checked;
 
                 if (string.IsNullOrEmpty(hoten) || string.IsNullOrEmpty(email) || string.IsNullOrEmpty(matkhau))
                 {
@@ -253,10 +231,12 @@ namespace GUI_PolyCafe
             {
                 MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
-        private void btnXoaNhanVien_Click_1(object sender, EventArgs e)
+        private void btnNutXoa_Click(object sender, EventArgs e)
         {
+
             try
             {
                 string maNV = txtMaNV.Text.Trim();
@@ -277,35 +257,40 @@ namespace GUI_PolyCafe
             {
                 MessageBox.Show("Lỗi: " + ex.Message, "Lỗi", MessageBoxButtons.OK, MessageBoxIcon.Error);
             }
+
         }
 
-        private void btnThoatNhanVien_Click(object sender, EventArgs e)
+        private void btnNutLamMoi_Click(object sender, EventArgs e)
         {
-            this.Close();
+            ClearForm();
+            loadDanhSachNhanVien();
+
         }
 
-        private void dgvNhanVien_CellFormatting(object sender, DataGridViewCellFormattingEventArgs e)
+        private void dgvNhanVien_CellClick_1(object sender, DataGridViewCellEventArgs e)
         {
-            if (e.RowIndex >= 0)
+
+            if (e.RowIndex >= 0 && e.ColumnIndex >= 0)
             {
                 DataGridViewRow row = dgvNhanVien.Rows[e.RowIndex];
                 NhanVien nv = (NhanVien)row.DataBoundItem;
-
-                if (dgvNhanVien.Columns[e.ColumnIndex].Name == "VaiTroDisplay")
-                {
-                    e.Value = nv.VaiTro ? "Nhân Viên" : "Quản Lý";
-                    e.FormattingApplied = true;
-                }
-
-                if (dgvNhanVien.Columns[e.ColumnIndex].Name == "TrangThaiDisplay")
-                {
-                    e.Value = nv.TrangThai ? "Đang Hoạt Động" : "Tạm Ngưng";
-                    e.FormattingApplied = true;
-                }
+                txtMaNV.Text = nv.MaNhanVien;
+                txtHoTen.Text = nv.HoTen;
+                txtEmail.Text = nv.Email;
+                txtMatKhau.Text = nv.MatKhau;
+                rdoNhanVien.Checked = nv.VaiTro; // true = Nhân Viên, false = Quản Lý
+                rdoQuanLy.Checked = !nv.VaiTro; // false = Nhân Viên, true = Quản Lý
+                rdbDangHoatDong.Checked = nv.TrangThai; // true = Đang Hoạt Động, false = Tạm Ngưng
+                rdbTamNgung.Checked = !nv.TrangThai; // false = Đang Hoạt Động, true = Tạm Ngưng
+                txtMaNV.Enabled = false;
+                btnNutThem.Enabled = false;
+                btnNutSua.Enabled = true;
+                btnNutXoa.Enabled = true;
             }
+
         }
 
-        private void dgvNhanVien_CellEndEdit(object sender, DataGridViewCellEventArgs e)
+        private void dgvNhanVien_CellEndEdit_1(object sender, DataGridViewCellEventArgs e)
         {
             if (e.RowIndex >= 0)
             {
@@ -342,9 +327,36 @@ namespace GUI_PolyCafe
             }
         }
 
-        private void guna2vTrackBar1_Scroll(object sender, ScrollEventArgs e)
+        private void dgvNhanVien_CellFormatting_1(object sender, DataGridViewCellFormattingEventArgs e)
+        {
+            if (e.RowIndex >= 0)
+            {
+                DataGridViewRow row = dgvNhanVien.Rows[e.RowIndex];
+                NhanVien nv = (NhanVien)row.DataBoundItem;
+
+                if (dgvNhanVien.Columns[e.ColumnIndex].Name == "VaiTroDisplay")
+                {
+                    e.Value = nv.VaiTro ? "Nhân Viên" : "Quản Lý";
+                    e.FormattingApplied = true;
+                }
+
+                if (dgvNhanVien.Columns[e.ColumnIndex].Name == "TrangThaiDisplay")
+                {
+                    e.Value = nv.TrangThai ? "Đang Hoạt Động" : "Tạm Ngưng";
+                    e.FormattingApplied = true;
+                }
+            }
+        }
+
+        private void grpThongTinNhanVien_Click(object sender, EventArgs e)
         {
 
+        }
+
+        private void btnTimKiemNhanVien_Click(object sender, EventArgs e)
+        {
+
+            TimKiemNhanVien();
         }
     }
 }

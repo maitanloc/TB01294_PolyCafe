@@ -29,7 +29,7 @@ namespace GUI_PolyCafe
             nhanVien = nv;
             lstChiTiet = new List<ChiTietPhieu>();
             lstSanPham = new List<SanPham>();
-            isActive = phieu.TrangThai.Equals("Chờ xác nhận") || phieu.TrangThai.Equals("Đã thanh toán");
+            isActive = phieu.TrangThai;
         }
         private void activeTranfer()
         {
@@ -41,9 +41,9 @@ namespace GUI_PolyCafe
             }
             else
             {
-                txtPhanTram.Enabled = true;
-                btnThemChiTiet.Enabled = true;
-                btnXoaChiTiet.Enabled = true;
+                txtPhanTram.Enabled = false;
+                btnThemChiTiet.Enabled = false;
+                btnXoaChiTiet.Enabled = false;
             }
         }
 
@@ -152,6 +152,7 @@ namespace GUI_PolyCafe
         }
         private void transfer(SanPham sp, int soLuong = 1)
         {
+            // Kiểm tra trạng thái hoạt động của phiếu
             if (isActive)
             {
                 return;

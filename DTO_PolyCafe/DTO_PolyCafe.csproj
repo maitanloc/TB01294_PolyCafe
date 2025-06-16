@@ -43,6 +43,8 @@
   <ItemGroup>
     <Compile Include="ChiTietPhieu.cs" />
     <Compile Include="LoaiSanPham.cs" />
+    <Compile Include="LoaiVatLieu.cs" />
+    <Compile Include="NhaCungCap.cs" />
     <Compile Include="NhanVien.cs" />
     <Compile Include="PhieuBanHang.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -50,6 +52,7 @@
     <Compile Include="TheLuuDong.cs" />
     <Compile Include="TKDoanhThuLoaiSP.cs" />
     <Compile Include="TKDoanhThuTheoNhanVien.cs" />
+    <Compile Include="VatLieu.cs" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Icons\Icon.ico" />
