@@ -225,5 +225,32 @@ namespace GUI_PolyCafe
                 Application.Exit(); // Thoát ứng dụng 
             }
         }
+
+        private void btnVatLieu_Click(object sender, EventArgs e)
+        {
+
+            pnVatLieu.Visible = !pnVatLieu.Visible;
+        }
+
+        private void btnQuanLyVatLieu_Click(object sender, EventArgs e)
+        {
+
+            openChildForm(new frmVatLieu());
+            frmVatLieu frmQuanLyVatLieu = new frmVatLieu();
+        }
+
+        private void btnLoaiVatLieu_Click(object sender, EventArgs e)
+        {
+
+            openChildForm(new frmLoaiVatLieu());
+            frmLoaiVatLieu frmLoaiVatLieu = new frmLoaiVatLieu();
+        }
+
+        private void btnNhaCungCap_Click(object sender, EventArgs e)
+        {
+
+            openChildForm(new frmNhaCungCap());
+            frmNhaCungCap frmNhaCungCap = new frmNhaCungCap();
+        }
     }
 }

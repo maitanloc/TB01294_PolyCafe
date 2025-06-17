@@ -118,7 +118,7 @@
             dgvPhieuBanHang.Name = "dgvPhieuBanHang";
             dgvPhieuBanHang.RowHeadersVisible = false;
             dgvPhieuBanHang.RowHeadersWidth = 51;
-            dgvPhieuBanHang.Size = new Size(870, 327);
+            dgvPhieuBanHang.Size = new Size(870, 481);
             dgvPhieuBanHang.TabIndex = 31;
             dgvPhieuBanHang.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvPhieuBanHang.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -172,7 +172,7 @@
             dgvSanPham.Name = "dgvSanPham";
             dgvSanPham.RowHeadersVisible = false;
             dgvSanPham.RowHeadersWidth = 51;
-            dgvSanPham.Size = new Size(407, 650);
+            dgvSanPham.Size = new Size(483, 793);
             dgvSanPham.TabIndex = 34;
             dgvSanPham.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvSanPham.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -212,7 +212,7 @@
             groThongTinThanhToan.CustomizableEdges = customizableEdges11;
             groThongTinThanhToan.Font = new Font("Sitka Heading Semibold", 12F, FontStyle.Bold);
             groThongTinThanhToan.ForeColor = Color.FromArgb(128, 64, 0);
-            groThongTinThanhToan.Location = new Point(12, 509);
+            groThongTinThanhToan.Location = new Point(12, 652);
             groThongTinThanhToan.Name = "groThongTinThanhToan";
             groThongTinThanhToan.ShadowDecoration.CustomizableEdges = customizableEdges12;
             groThongTinThanhToan.Size = new Size(870, 213);
@@ -467,7 +467,7 @@
             btnTimKiemSanPham.Location = new Point(1361, 27);
             btnTimKiemSanPham.Name = "btnTimKiemSanPham";
             btnTimKiemSanPham.ShadowDecoration.CustomizableEdges = customizableEdges18;
-            btnTimKiemSanPham.Size = new Size(85, 37);
+            btnTimKiemSanPham.Size = new Size(158, 37);
             btnTimKiemSanPham.TabIndex = 38;
             btnTimKiemSanPham.Text = "Tìm Kiếm";
             btnTimKiemSanPham.TextAlign = HorizontalAlignment.Right;
@@ -631,7 +631,7 @@
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1460, 726);
+            ClientSize = new Size(1531, 877);
             Controls.Add(btnLamMoi);
             Controls.Add(lblVaoNgayLap);
             Controls.Add(lblNgayLap);

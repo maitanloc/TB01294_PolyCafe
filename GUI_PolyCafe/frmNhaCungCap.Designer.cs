@@ -28,6 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
+            components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
@@ -60,6 +61,12 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges26 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges27 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges28 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges31 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges32 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges29 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges30 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges33 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges34 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dgvNhaCungCap = new Guna.UI2.WinForms.Guna2DataGridView();
             guna2HtmlLabel1 = new Guna.UI2.WinForms.Guna2HtmlLabel();
             grpNhaCungCap = new Guna.UI2.WinForms.Guna2GroupBox();
@@ -81,9 +88,14 @@
             btnNutThem = new Guna.UI2.WinForms.Guna2Button();
             txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
             btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Panel3 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2BorderlessForm1 = new Guna.UI2.WinForms.Guna2BorderlessForm(components);
             ((System.ComponentModel.ISupportInitialize)dgvNhaCungCap).BeginInit();
             grpNhaCungCap.SuspendLayout();
             guna2GroupBox1.SuspendLayout();
+            guna2Panel1.SuspendLayout();
             SuspendLayout();
             // 
             // dgvNhaCungCap
@@ -109,7 +121,7 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvNhaCungCap.DefaultCellStyle = dataGridViewCellStyle3;
             dgvNhaCungCap.GridColor = Color.FromArgb(231, 229, 255);
-            dgvNhaCungCap.Location = new Point(176, 82);
+            dgvNhaCungCap.Location = new Point(146, 182);
             dgvNhaCungCap.Name = "dgvNhaCungCap";
             dgvNhaCungCap.RowHeadersVisible = false;
             dgvNhaCungCap.RowHeadersWidth = 51;
@@ -164,7 +176,7 @@
             grpNhaCungCap.CustomizableEdges = customizableEdges13;
             grpNhaCungCap.Font = new Font("Segoe UI", 9F);
             grpNhaCungCap.ForeColor = Color.FromArgb(125, 137, 149);
-            grpNhaCungCap.Location = new Point(177, 475);
+            grpNhaCungCap.Location = new Point(146, 610);
             grpNhaCungCap.Name = "grpNhaCungCap";
             grpNhaCungCap.ShadowDecoration.CustomizableEdges = customizableEdges14;
             grpNhaCungCap.Size = new Size(948, 255);
@@ -377,7 +389,7 @@
             guna2GroupBox1.CustomizableEdges = customizableEdges23;
             guna2GroupBox1.Font = new Font("Segoe UI", 9F);
             guna2GroupBox1.ForeColor = Color.FromArgb(125, 137, 149);
-            guna2GroupBox1.Location = new Point(1164, 478);
+            guna2GroupBox1.Location = new Point(1133, 613);
             guna2GroupBox1.Name = "guna2GroupBox1";
             guna2GroupBox1.ShadowDecoration.CustomizableEdges = customizableEdges24;
             guna2GroupBox1.Size = new Size(390, 252);
@@ -498,7 +510,7 @@
             txtTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTimKiem.Font = new Font("Segoe UI", 9F);
             txtTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTimKiem.Location = new Point(1207, 35);
+            txtTimKiem.Location = new Point(1184, 135);
             txtTimKiem.Margin = new Padding(3, 4, 3, 4);
             txtTimKiem.Name = "txtTimKiem";
             txtTimKiem.PasswordChar = '\0';
@@ -525,23 +537,65 @@
             btnTimKiem.FillColor = Color.FromArgb(64, 0, 0);
             btnTimKiem.Font = new Font("Segoe UI", 9F);
             btnTimKiem.ForeColor = Color.White;
-            btnTimKiem.Location = new Point(1499, 35);
+            btnTimKiem.Location = new Point(1476, 135);
             btnTimKiem.Name = "btnTimKiem";
             btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges28;
             btnTimKiem.Size = new Size(46, 44);
             btnTimKiem.TabIndex = 20;
             btnTimKiem.Click += btnTimKiem_Click_1;
             // 
+            // guna2Panel1
+            // 
+            guna2Panel1.BackColor = Color.FromArgb(64, 0, 0);
+            guna2Panel1.BackgroundImage = (Image)resources.GetObject("guna2Panel1.BackgroundImage");
+            guna2Panel1.BackgroundImageLayout = ImageLayout.Center;
+            guna2Panel1.Controls.Add(guna2Panel2);
+            guna2Panel1.CustomizableEdges = customizableEdges31;
+            guna2Panel1.Location = new Point(-1, -4);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges32;
+            guna2Panel1.Size = new Size(141, 886);
+            guna2Panel1.TabIndex = 22;
+            // 
+            // guna2Panel2
+            // 
+            guna2Panel2.CustomizableEdges = customizableEdges29;
+            guna2Panel2.Location = new Point(147, 0);
+            guna2Panel2.Name = "guna2Panel2";
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges30;
+            guna2Panel2.Size = new Size(1376, 125);
+            guna2Panel2.TabIndex = 23;
+            // 
+            // guna2Panel3
+            // 
+            guna2Panel3.BackColor = Color.FromArgb(64, 0, 0);
+            guna2Panel3.BackgroundImage = (Image)resources.GetObject("guna2Panel3.BackgroundImage");
+            guna2Panel3.CustomizableEdges = customizableEdges33;
+            guna2Panel3.Location = new Point(138, -4);
+            guna2Panel3.Name = "guna2Panel3";
+            guna2Panel3.ShadowDecoration.CustomizableEdges = customizableEdges34;
+            guna2Panel3.Size = new Size(1391, 135);
+            guna2Panel3.TabIndex = 23;
+            // 
+            // guna2BorderlessForm1
+            // 
+            guna2BorderlessForm1.ContainerControl = this;
+            guna2BorderlessForm1.DockIndicatorTransparencyValue = 0.6D;
+            guna2BorderlessForm1.TransparentWhileDrag = true;
+            // 
             // frmNhaCungCap
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1569, 743);
+            ClientSize = new Size(1531, 877);
+            Controls.Add(guna2Panel3);
+            Controls.Add(guna2Panel1);
             Controls.Add(txtTimKiem);
             Controls.Add(btnTimKiem);
             Controls.Add(guna2GroupBox1);
             Controls.Add(grpNhaCungCap);
             Controls.Add(dgvNhaCungCap);
+            FormBorderStyle = FormBorderStyle.None;
             Name = "frmNhaCungCap";
             Text = "frmNhaCungCap";
             Load += frmNhaCungCap_Load;
@@ -549,6 +603,7 @@
             grpNhaCungCap.ResumeLayout(false);
             grpNhaCungCap.PerformLayout();
             guna2GroupBox1.ResumeLayout(false);
+            guna2Panel1.ResumeLayout(false);
             ResumeLayout(false);
         }
 
@@ -575,5 +630,9 @@
         private Guna.UI2.WinForms.Guna2Button btnNutThem;
         private Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel3;
+        private Guna.UI2.WinForms.Guna2BorderlessForm guna2BorderlessForm1;
     }
 }

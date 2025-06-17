@@ -50,6 +50,10 @@
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges16 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges17 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges18 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges19 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges20 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges21 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
+            Guna.UI2.WinForms.Suite.CustomizableEdges customizableEdges22 = new Guna.UI2.WinForms.Suite.CustomizableEdges();
             dgvLoaiSanPham = new Guna.UI2.WinForms.Guna2DataGridView();
             lblMaSanPham = new Guna.UI2.WinForms.Guna2HtmlLabel();
             lblHinhAnh = new Guna.UI2.WinForms.Guna2HtmlLabel();
@@ -65,6 +69,8 @@
             txtGhiChu = new Guna.UI2.WinForms.Guna2TextBox();
             btnTimKiem = new Guna.UI2.WinForms.Guna2Button();
             txtTimKiem = new Guna.UI2.WinForms.Guna2TextBox();
+            guna2Panel1 = new Guna.UI2.WinForms.Guna2Panel();
+            guna2Panel2 = new Guna.UI2.WinForms.Guna2Panel();
             ((System.ComponentModel.ISupportInitialize)dgvLoaiSanPham).BeginInit();
             SuspendLayout();
             // 
@@ -91,11 +97,11 @@
             dataGridViewCellStyle3.WrapMode = DataGridViewTriState.False;
             dgvLoaiSanPham.DefaultCellStyle = dataGridViewCellStyle3;
             dgvLoaiSanPham.GridColor = Color.FromArgb(231, 229, 255);
-            dgvLoaiSanPham.Location = new Point(7, 51);
+            dgvLoaiSanPham.Location = new Point(259, 215);
             dgvLoaiSanPham.Name = "dgvLoaiSanPham";
             dgvLoaiSanPham.RowHeadersVisible = false;
             dgvLoaiSanPham.RowHeadersWidth = 51;
-            dgvLoaiSanPham.Size = new Size(1550, 257);
+            dgvLoaiSanPham.Size = new Size(1228, 342);
             dgvLoaiSanPham.TabIndex = 1;
             dgvLoaiSanPham.ThemeStyle.AlternatingRowsStyle.BackColor = Color.White;
             dgvLoaiSanPham.ThemeStyle.AlternatingRowsStyle.Font = null;
@@ -125,7 +131,7 @@
             lblMaSanPham.BackColor = Color.Transparent;
             lblMaSanPham.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblMaSanPham.ForeColor = Color.Tan;
-            lblMaSanPham.Location = new Point(43, 372);
+            lblMaSanPham.Location = new Point(281, 582);
             lblMaSanPham.Name = "lblMaSanPham";
             lblMaSanPham.Size = new Size(62, 22);
             lblMaSanPham.TabIndex = 3;
@@ -136,7 +142,7 @@
             lblHinhAnh.BackColor = Color.Transparent;
             lblHinhAnh.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblHinhAnh.ForeColor = Color.Tan;
-            lblHinhAnh.Location = new Point(980, 404);
+            lblHinhAnh.Location = new Point(913, 582);
             lblHinhAnh.Name = "lblHinhAnh";
             lblHinhAnh.Size = new Size(58, 22);
             lblHinhAnh.TabIndex = 6;
@@ -147,7 +153,7 @@
             lblMaLoai.BackColor = Color.Transparent;
             lblMaLoai.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblMaLoai.ForeColor = Color.Tan;
-            lblMaLoai.Location = new Point(43, 442);
+            lblMaLoai.Location = new Point(281, 652);
             lblMaLoai.Name = "lblMaLoai";
             lblMaLoai.Size = new Size(58, 22);
             lblMaLoai.TabIndex = 8;
@@ -167,7 +173,7 @@
             txtMaLoaiSanPham.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtMaLoaiSanPham.Font = new Font("Segoe UI", 9F);
             txtMaLoaiSanPham.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtMaLoaiSanPham.Location = new Point(116, 418);
+            txtMaLoaiSanPham.Location = new Point(354, 628);
             txtMaLoaiSanPham.Margin = new Padding(3, 4, 3, 4);
             txtMaLoaiSanPham.Name = "txtMaLoaiSanPham";
             txtMaLoaiSanPham.PasswordChar = '\0';
@@ -191,7 +197,7 @@
             txtTenLoaiSanPham.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTenLoaiSanPham.Font = new Font("Segoe UI", 9F);
             txtTenLoaiSanPham.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTenLoaiSanPham.Location = new Point(116, 354);
+            txtTenLoaiSanPham.Location = new Point(354, 564);
             txtTenLoaiSanPham.Margin = new Padding(3, 4, 3, 4);
             txtTenLoaiSanPham.Name = "txtTenLoaiSanPham";
             txtTenLoaiSanPham.PasswordChar = '\0';
@@ -217,7 +223,7 @@
             btnThem.FillColor = Color.Transparent;
             btnThem.Font = new Font("Segoe UI", 9F);
             btnThem.ForeColor = Color.White;
-            btnThem.Location = new Point(45, 580);
+            btnThem.Location = new Point(224, 767);
             btnThem.Name = "btnThem";
             btnThem.ShadowDecoration.CustomizableEdges = customizableEdges6;
             btnThem.Size = new Size(95, 67);
@@ -240,7 +246,7 @@
             btnSua.FillColor = Color.Transparent;
             btnSua.Font = new Font("Segoe UI", 9F);
             btnSua.ForeColor = Color.White;
-            btnSua.Location = new Point(175, 580);
+            btnSua.Location = new Point(354, 767);
             btnSua.Name = "btnSua";
             btnSua.ShadowDecoration.CustomizableEdges = customizableEdges8;
             btnSua.Size = new Size(95, 67);
@@ -262,7 +268,7 @@
             btnXoa.FillColor = Color.Transparent;
             btnXoa.Font = new Font("Segoe UI", 9F);
             btnXoa.ForeColor = Color.White;
-            btnXoa.Location = new Point(302, 580);
+            btnXoa.Location = new Point(455, 767);
             btnXoa.Name = "btnXoa";
             btnXoa.ShadowDecoration.CustomizableEdges = customizableEdges10;
             btnXoa.Size = new Size(95, 67);
@@ -285,7 +291,7 @@
             btnLamMoi.FillColor = Color.Transparent;
             btnLamMoi.Font = new Font("Segoe UI", 9F);
             btnLamMoi.ForeColor = Color.White;
-            btnLamMoi.Location = new Point(431, 580);
+            btnLamMoi.Location = new Point(610, 767);
             btnLamMoi.Name = "btnLamMoi";
             btnLamMoi.ShadowDecoration.CustomizableEdges = customizableEdges12;
             btnLamMoi.Size = new Size(95, 67);
@@ -295,7 +301,7 @@
             // 
             // guna2Separator2
             // 
-            guna2Separator2.Location = new Point(12, 481);
+            guna2Separator2.Location = new Point(250, 691);
             guna2Separator2.Name = "guna2Separator2";
             guna2Separator2.Size = new Size(538, 49);
             guna2Separator2.TabIndex = 20;
@@ -305,7 +311,7 @@
             lblChucNang.BackColor = Color.Transparent;
             lblChucNang.Font = new Font("Segoe UI", 9F, FontStyle.Bold);
             lblChucNang.ForeColor = Color.Tan;
-            lblChucNang.Location = new Point(21, 517);
+            lblChucNang.Location = new Point(259, 727);
             lblChucNang.Name = "lblChucNang";
             lblChucNang.Size = new Size(80, 22);
             lblChucNang.TabIndex = 21;
@@ -323,7 +329,7 @@
             txtGhiChu.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtGhiChu.Font = new Font("Segoe UI", 9F);
             txtGhiChu.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtGhiChu.Location = new Point(1069, 315);
+            txtGhiChu.Location = new Point(1011, 564);
             txtGhiChu.Margin = new Padding(3, 4, 3, 4);
             txtGhiChu.Name = "txtGhiChu";
             txtGhiChu.PasswordChar = '\0';
@@ -352,7 +358,7 @@
             btnTimKiem.Font = new Font("Segoe UI", 12F, FontStyle.Bold);
             btnTimKiem.ForeColor = Color.Black;
             btnTimKiem.ImageAlign = HorizontalAlignment.Left;
-            btnTimKiem.Location = new Point(1347, 6);
+            btnTimKiem.Location = new Point(1300, 157);
             btnTimKiem.Name = "btnTimKiem";
             btnTimKiem.ShadowDecoration.CustomizableEdges = customizableEdges16;
             btnTimKiem.Size = new Size(187, 37);
@@ -376,7 +382,7 @@
             txtTimKiem.FocusedState.BorderColor = Color.FromArgb(94, 148, 255);
             txtTimKiem.Font = new Font("Segoe UI", 9F);
             txtTimKiem.HoverState.BorderColor = Color.FromArgb(94, 148, 255);
-            txtTimKiem.Location = new Point(925, 6);
+            txtTimKiem.Location = new Point(878, 157);
             txtTimKiem.Margin = new Padding(3, 4, 3, 4);
             txtTimKiem.Name = "txtTimKiem";
             txtTimKiem.PasswordChar = '\0';
@@ -386,11 +392,33 @@
             txtTimKiem.Size = new Size(416, 38);
             txtTimKiem.TabIndex = 27;
             // 
+            // guna2Panel1
+            // 
+            guna2Panel1.BackgroundImage = (Image)resources.GetObject("guna2Panel1.BackgroundImage");
+            guna2Panel1.CustomizableEdges = customizableEdges19;
+            guna2Panel1.Location = new Point(0, -4);
+            guna2Panel1.Name = "guna2Panel1";
+            guna2Panel1.ShadowDecoration.CustomizableEdges = customizableEdges20;
+            guna2Panel1.Size = new Size(225, 889);
+            guna2Panel1.TabIndex = 29;
+            // 
+            // guna2Panel2
+            // 
+            guna2Panel2.BackgroundImage = (Image)resources.GetObject("guna2Panel2.BackgroundImage");
+            guna2Panel2.CustomizableEdges = customizableEdges21;
+            guna2Panel2.Location = new Point(225, 0);
+            guna2Panel2.Name = "guna2Panel2";
+            guna2Panel2.ShadowDecoration.CustomizableEdges = customizableEdges22;
+            guna2Panel2.Size = new Size(1306, 152);
+            guna2Panel2.TabIndex = 30;
+            // 
             // frmQuanLyLoaiSanPham
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
-            ClientSize = new Size(1615, 690);
+            ClientSize = new Size(1531, 877);
+            Controls.Add(guna2Panel2);
+            Controls.Add(guna2Panel1);
             Controls.Add(btnTimKiem);
             Controls.Add(txtTimKiem);
             Controls.Add(txtGhiChu);
@@ -437,5 +465,7 @@
         private Guna.UI2.WinForms.Guna2ComboBox cboMaLoai;
         private Guna.UI2.WinForms.Guna2Button btnTimKiem;
         private Guna.UI2.WinForms.Guna2TextBox txtTimKiem;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel1;
+        private Guna.UI2.WinForms.Guna2Panel guna2Panel2;
     }
 }

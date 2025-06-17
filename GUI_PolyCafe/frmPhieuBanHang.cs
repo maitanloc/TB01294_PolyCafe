@@ -115,7 +115,7 @@ namespace GUI_PolyCafe
 
         private void btnPhieuBanHang_Click(object sender, EventArgs e)
         {
-            pnPhieuBanHang.Visible = !pnPhieuBanHang.Visible;
+            
         }
 
         private void frmPhieuBanHang_Load(object sender, EventArgs e)
